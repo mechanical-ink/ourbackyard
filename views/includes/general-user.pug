@@ -1,0 +1,19 @@
+section(id="resident" class="general-user hidden" aria-hidden="true")
+  form(id="resident-form" name="user" action="/sign-up-user" method="post")
+    div(class="field-group")
+      label(for="user-name") Your name
+      input(type="text" id="user-name" name="user-name" required)
+      p(id="username-error" class="validation-msg error hidden")
+
+    div(class="field-group")
+      label(for="user-email") Email address
+      input(type="email" id="user-email" name="user-email" required)
+      p(id="useremail-error" class="validation-msg error hidden")
+
+    div(class="field-group")
+      input(type="checkbox" id="newsletter-user" name="newsletter" value="subscribe")
+      label(for="newsletter-user" class="inline-label") Subscribe to our newsletter?
+
+      p(class="newsletter-note") Our newsletter is sent out twice a month and you can unsubscribe at any time. We despise spam and will always honour your choice.
+
+    input(class="cta" type="submit" value="Sign up")

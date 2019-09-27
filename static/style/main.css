@@ -1,0 +1,195 @@
+body {
+  margin: 0;
+  padding: 0;
+  font: 16px/1.5 serif;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1400px;
+  min-height: 76vh;
+}
+
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  margin-bottom: 0;
+}
+
+.logo::before {
+  display: block;
+  content: "";
+  background: transparent url("../media/ourbackyard-logo.svg") 0 0 no-repeat;
+  width: 400px;
+  height: 100px;
+}
+
+.cta-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.what-we-do {
+  grid-area: what-we-do;
+  margin: 0 auto;
+  max-width: 90ch;
+  text-align: center;
+}
+
+.what-we-do h2 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.what-we-do p {
+  font-size: 1.3rem;
+}
+
+.business-user {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.business-user::before {
+  display: block;
+  content: "";
+  margin: 0 auto 30px;
+  background: transparent url("../media/business-users.svg") 0 0 no-repeat;
+  width: 420px;
+  height: 320px;
+}
+
+.general-user {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.general-user::before {
+  display: block;
+  content: "";
+  margin: 0 auto 30px;
+  background: transparent url("../media/general-users.svg") 0 0 no-repeat;
+  width: 500px;
+  height: 400px;
+}
+
+.newsletter-note {
+  max-width: 340px;
+}
+
+footer {
+  background-color: #d0cde1;
+  color: #333;
+  margin-top: 100px;
+  padding: 50px;
+}
+
+/* forms */
+fieldset {
+  border: 0;
+}
+
+fieldset legend {
+  font-size: 2rem;
+}
+
+.field-group {
+  display: block;
+  padding: 10px;
+}
+
+.field-group label {
+  display: block;
+}
+
+.field-group input,
+.field-group textarea {
+  padding: 10px;
+  width: 70%;
+}
+
+.field-group .inline-label {
+  display: inline-block;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+  width: auto;
+}
+
+/* buttons */
+.cta {
+  background-color: #523766;
+  color: #fff;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 6px;
+  min-width: 120px;
+  cursor: pointer;
+}
+
+.business-user .cta {
+  margin-left: 25px;
+}
+
+.cta:hover,
+.cta:focus,
+.cta:active {
+  background-color: #785a8f;
+}
+
+.main-cta {
+  width: 300px;
+  padding: 20px;
+  font-size: 1.3rem;
+  letter-spacing: 0.035rem;
+}
+
+/* Form messages */
+.validation-msg,
+.thank-you {
+  padding: 10px;
+  border: 5px solid #333;
+  max-width: 340px;
+}
+
+.thank-you {
+  text-align: center;
+}
+
+.error {
+  background-color: #ad1111;
+  color: #fff;
+  border-color: #c45e5e;
+}
+
+.success {
+  background-color: #1b6628;
+  color: #fff;
+  margin: 0 auto;
+  border-color: #41b554;
+  max-width: 420px;
+}
+
+/* utils */
+.hidden {
+  display: none;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  /* !important required to ensure element is hidden when mixin is applied */
+  position: absolute !important; /* stylelint-disable-line declaration-no-important */
+  width: 1px;
+}

@@ -1,0 +1,63 @@
+section(id="business-user" class="business-user hidden" aria-hidden="true")
+  form(id="business-user-form" name="business" action="/sign-up-business" method="post")
+    fieldset
+      legend Business Information
+
+      div(class="field-group")
+        label(for="business-name") Business name
+        input(type="text" id="business-name" name="business-name" required)
+        p(id="businessname-error" class="validation-msg error hidden")
+
+      div(class="field-group")
+        label(for="business-sector") Business sector
+        input(type="text" id="business-sector" name="business-sector" required)
+        p(id="businesssector-error" class="validation-msg error hidden")
+
+      div(class="field-group")
+        label(for="business-about") About your business
+        textarea(id="business-about" name="business-about" rows="5" required)
+        p(id="businessabout-error" class="validation-msg error hidden")
+
+      div(class="field-group")
+        label(for="business-services") Services
+        input(type="text" id="business-services" name="business-services" placeholder="Add a comma separated list of services" required)
+        p(id="businessservices-error" class="validation-msg error hidden")
+
+    fieldset
+      legend Address
+
+      div(class="field-group")
+        label(for="business-address") Street address
+        input(id="business-address" name="business-address" required)
+        p(id="businessaddress-error" class="validation-msg error hidden")
+
+      div(class="field-group")
+        label(for="business-city") City
+        input(id="business-city" name="business-city")
+        p(id="businesscity-error" class="validation-msg error hidden" required)
+
+      div(class="field-group")
+        label(for="business-suburb") Suburb
+        input(id="business-suburb" name="business-suburb")
+        p(id="businesssuburb-error" class="validation-msg error hidden" required)
+
+      div(class="field-group")
+        label(for="business-postcode") Postal code
+        input(id="business-postcode" name="business-postcode")
+        p(id="businesspostcode-error" class="validation-msg error hidden" required)
+
+    fieldset
+      legend Contact information
+
+      div(class="field-group")
+        label(for="business-email") Email address
+        input(type="email" id="business-email" name="business-email" required)
+        p(id="businessemail-error" class="validation-msg error hidden")
+
+      div(class="field-group")
+        input(type="checkbox" id="newsletter-business" name="newsletter" value="subscribe")
+        label(for="newsletter-business" class="inline-label") Subscribe to our newsletter?
+
+        p(class="newsletter-note") Our newsletter is sent out twice a month and you can unsubscribe at any time. We despise spam and will always honour your choice.
+
+    input(class="cta" type="submit" value="Sign up")

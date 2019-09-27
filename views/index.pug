@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+  include includes/head.pug
+  body
+    div(class="wrapper")
+      header(class="site-header")
+        h1(class="logo")
+          span(class="visually-hidden") Ourbackyard
+      main
+        section(class="what-we-do")
+          header
+            h2(class="lead") Welcome to Ourbackyard. Thank you for stopping by.
+          p Ourbackyard is a project that aims to empower local communities by connecting local, non-franchise businesses with the people living in their community. We are often unaware of the wealth of businesses and services in our own backyard. We aim to change that by making it quick and easy to find what you need.
+          p We are still building Ourbackyard and getting our ducks in a row. But, while we tinker away, you are invited to sign-up and show your interest in the project.
+          p You can either sign up as a business or an individual. Everyone is welcome.
+
+          section(id="cta-container" class="cta-container")
+            button(id="sign-up-business" class="cta main-cta" data-section="business-user") Business
+            button(id="sign-up-resident" class="cta main-cta" data-section="resident") Individual
+
+        div(id="signup-container")
+          include includes/business-user.pug
+          include includes/general-user.pug
+
+        div(class="thank-you success hidden")
+          p Thank you for your interest in Ourbackyard.co.za. We have sent you a confirmation email and will keep you posted on our progress.
+
+    include includes/footer.pug
