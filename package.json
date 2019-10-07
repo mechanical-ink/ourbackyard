@@ -21,7 +21,7 @@
   "author": "Schalk Neethling",
   "license": "MIT",
   "devDependencies": {
-    "parcel-bundler": "1.12.3",
+    "parcel-bundler": "1.12.4",
     "sass": "^1.22.10"
   },
   "dependencies": {
