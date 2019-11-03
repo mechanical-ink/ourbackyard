@@ -10,6 +10,14 @@ body {
   min-height: 76vh;
 }
 
+main {
+  padding: 20px;
+}
+
+main p {
+  margin: 20px 0;
+}
+
 .site-header {
   display: flex;
   flex-direction: column;
@@ -17,6 +25,7 @@ body {
 }
 
 .logo {
+  margin-top: 20px;
   margin-bottom: 0;
 }
 
@@ -24,7 +33,7 @@ body {
   display: block;
   content: "";
   background: transparent url("../media/ourbackyard-logo.svg") 0 0 no-repeat;
-  width: 400px;
+  width: 370px;
   height: 100px;
 }
 
@@ -41,8 +50,14 @@ body {
 }
 
 .what-we-do h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   line-height: 1.2;
+}
+
+@media screen and (min-width: 63.9385em) {
+  .what-we-do h2 {
+    font-size: 2.5rem;
+  }
 }
 
 .what-we-do p {
@@ -57,10 +72,18 @@ body {
 .business-user::before {
   display: block;
   content: "";
-  margin: 0 auto 30px;
+  margin: 0 auto;
   background: transparent url("../media/business-users.svg") 0 0 no-repeat;
-  width: 420px;
-  height: 320px;
+  width: 340px;
+  height: 240px;
+}
+
+@media screen and (min-width: 63.9385em) {
+  .business-user::before {
+    margin-bottom: 30px;
+    width: 420px;
+    height: 320px;
+  }
 }
 
 .general-user {
@@ -71,10 +94,18 @@ body {
 .general-user::before {
   display: block;
   content: "";
-  margin: 0 auto 30px;
+  margin: 0 auto;
   background: transparent url("../media/general-users.svg") 0 0 no-repeat;
-  width: 500px;
-  height: 400px;
+  width: 300px;
+  height: 240px;
+}
+
+@media screen and (min-width: 63.9385em) {
+  .general-user::before {
+    margin-bottom: 30px;
+    width: 500px;
+    height: 400px;
+  }
 }
 
 .newsletter-note {
@@ -109,7 +140,14 @@ fieldset legend {
 .field-group input,
 .field-group textarea {
   padding: 10px;
-  width: 70%;
+  width: 100%;
+}
+
+@media screen and (min-width: 63.9385em) {
+  .field-group input,
+  .field-group textarea {
+    width: 70%;
+  }
 }
 
 .field-group .inline-label {
