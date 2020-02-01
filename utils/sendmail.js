@@ -26,6 +26,19 @@ const sendMail = {
     let info = await transporter.sendMail(mailOptions);
     return info;
   },
+  message: async mailBody => {
+    const mailOptions = {
+      to: process.env.MAIL_TO,
+      from: process.env.MAIL_FROM,
+      replyTo: process.env.MAIL_REPLYTO,
+      cc: process.env.MAIL_CC,
+      subject: process.env.MAIL_SUBJECT_CONTACT,
+      text: mailBody
+    };
+
+    let info = await transporter.sendMail(mailOptions);
+    return info;
+  },
   confirmation: async (mailBody, userEmail) => {
     let mailOptions = {
       to: userEmail,

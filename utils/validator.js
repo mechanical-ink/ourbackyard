@@ -10,41 +10,13 @@ const validator = {
       valid = false;
     }
 
-    if (formData.businessSector.trim() === "") {
-      invalidFields.push("businessSector");
-      valid = false;
-    }
-
     if (formData.businessAbout.trim() === "") {
       invalidFields.push("businessAbout");
       valid = false;
     }
 
-    if (formData.businessServices.trim() === "") {
-      invalidFields.push("businessServices");
-      valid = false;
-    }
-
     if (formData.businessAddress.trim() === "") {
       invalidFields.push("businessAddress");
-      valid = false;
-    }
-
-    if (formData.businessCity.trim() === "") {
-      invalidFields.push("businessCity");
-      valid = false;
-    }
-
-    if (formData.businessSuburb.trim() === "") {
-      invalidFields.push("businessSuburb");
-      valid = false;
-    }
-
-    if (
-      formData.businessPostcode.trim() === "" ||
-      isNaN(formData.businessPostcode)
-    ) {
-      invalidFields.push("businessPostcode");
       valid = false;
     }
 
@@ -78,6 +50,24 @@ const validator = {
     } else {
       return true;
     }
+  },
+  contactUs: formData => {
+    let invalidFields = [];
+    let valid = true;
+
+    Object.keys(formData).forEach(entry => {
+      if (formData[entry].trim() === "") {
+        invalidFields.push(entry);
+        valid = false;
+      }
+    });
+
+    return {
+      valid,
+      invalidFields: invalidFields.length
+        ? formResponses.contactUsInvalidFields(invalidFields)
+        : []
+    };
   }
 };
 

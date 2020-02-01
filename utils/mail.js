@@ -39,6 +39,26 @@ const mailUtils = {
         --\n
         Kind Regards,\n
         Everyone at Ourbackyard.co.za`;
+  },
+  getMessageBody: messageDetails => {
+    return `Hi there\r\n
+        A new message was just sent from Ourbackyard.co.za! Here are the details:\n
+        Name: ${messageDetails.name}\n
+        Email Address: ${messageDetails.email}\n
+        Message: ${messageDetails.message}\r\n
+        --\n
+        Kind Regards,\n
+        The Ourbackyard Bot`;
+  },
+  getMessageConfirmationBody: () => {
+    return `Hi there!\r\n
+        Thank you for your interest in Ourbackyard.co.za!\r\n
+        We have received your message and will treat it with the utmost respect for your privacy.\r\n
+        We personally read all of the messages we receive so, should your message requires a response from us,\n
+        we will do our utmost to get back to you as soon as possible.\n
+        --\n
+        Kind Regards,\n
+        Everyone at Ourbackyard.co.za`;
   }
 };
 

@@ -9,42 +9,17 @@ section(id="business-user" class="business-user hidden" aria-hidden="true")
         p(id="businessname-error" class="validation-msg error hidden")
 
       div(class="field-group")
-        label(for="business-sector") Business sector
-        input(type="text" id="business-sector" name="business-sector" required)
-        p(id="businesssector-error" class="validation-msg error hidden")
-
-      div(class="field-group")
         label(for="business-about") About your business
         textarea(id="business-about" name="business-about" rows="5" required)
         p(id="businessabout-error" class="validation-msg error hidden")
-
-      div(class="field-group")
-        label(for="business-services") Services
-        input(type="text" id="business-services" name="business-services" placeholder="Add a comma separated list of services" required)
-        p(id="businessservices-error" class="validation-msg error hidden")
 
     fieldset
       legend Address
 
       div(class="field-group")
-        label(for="business-address") Street address
-        input(id="business-address" name="business-address" required)
+        label(for="business-address") Business address
+        textarea(id="business-address" name="business-address" rows="5" required)
         p(id="businessaddress-error" class="validation-msg error hidden")
-
-      div(class="field-group")
-        label(for="business-city") City
-        input(id="business-city" name="business-city")
-        p(id="businesscity-error" class="validation-msg error hidden" required)
-
-      div(class="field-group")
-        label(for="business-suburb") Suburb
-        input(id="business-suburb" name="business-suburb")
-        p(id="businesssuburb-error" class="validation-msg error hidden" required)
-
-      div(class="field-group")
-        label(for="business-postcode") Postal code
-        input(id="business-postcode" name="business-postcode")
-        p(id="businesspostcode-error" class="validation-msg error hidden" required)
 
     fieldset
       legend Contact information
