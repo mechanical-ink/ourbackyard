@@ -1,8 +1,9 @@
 (function() {
-  "use strict";
+  ("use strict");
   const ctaContainer = document.getElementById("cta-container");
   const businessUserForm = document.getElementById("business-user-form");
   const residentUserForm = document.getElementById("resident-form");
+  const contactForm = document.getElementById("contact-form");
 
   function hidesignupForms() {
     let signupContainer = document.getElementById("signup-container");
@@ -14,22 +15,23 @@
     });
   }
 
-  ctaContainer.addEventListener("click", event => {
-    if (event.target.classList.contains("main-cta")) {
-      let sectionSelector = event.target.dataset["section"];
-      let section = document.getElementById(sectionSelector);
+  if (ctaContainer) {
+    ctaContainer.addEventListener("click", event => {
+      if (event.target.classList.contains("main-cta")) {
+        let sectionSelector = event.target.dataset["section"];
+        let section = document.getElementById(sectionSelector);
 
-      hidesignupForms();
+        hidesignupForms();
 
-      section.classList.remove("hidden");
-      section.setAttribute("aria-hidden", false);
-    }
-  });
+        section.classList.remove("hidden");
+        section.setAttribute("aria-hidden", false);
+      }
+    });
+  }
 
   function initAjaxRequest(method, url) {
     const xmlHttpRequest = new XMLHttpRequest();
     xmlHttpRequest.open(method, url);
-    xmlHttpRequest.setRequestHeader("Content-type", "application/json");
     xmlHttpRequest.timeout = 15000;
     xmlHttpRequest.resposeType = "json";
     return xmlHttpRequest;
@@ -55,13 +57,8 @@
     return JSON.stringify({
       userType: "business",
       businessName: formData.get("business-name"),
-      businessSector: formData.get("business-sector"),
       businessAbout: formData.get("business-about"),
-      businessServices: formData.get("business-services"),
       businessAddress: formData.get("business-address"),
-      businessCity: formData.get("business-city"),
-      businessSuburb: formData.get("business-suburb"),
-      businessPostcode: formData.get("business-postcode"),
       businessEmail: formData.get("business-email"),
       newsletter: formData.get("newsletter")
     });
@@ -114,42 +111,89 @@
     thankYouMsg.classList.remove("hidden");
   }
 
-  businessUserForm.addEventListener("submit", event => {
-    event.preventDefault();
+  if (businessUserForm) {
+    businessUserForm.addEventListener("submit", event => {
+      event.preventDefault();
 
-    hideFormErrors();
+      hideFormErrors();
 
-    let formData = getBusinessUserFormData(new FormData(businessUserForm));
-    let ajaxRequest = initAjaxRequest("post", "/signup");
-    ajaxRequest.send(formData);
+      let formData = getBusinessUserFormData(new FormData(businessUserForm));
+      let ajaxRequest = initAjaxRequest("post", "/signup");
+      ajaxRequest.send(formData);
 
-    getAjaxResponse(ajaxRequest).then(validationSuccess => {
-      let parsedResponse = JSON.parse(validationSuccess);
+      getAjaxResponse(ajaxRequest).then(validationSuccess => {
+        let parsedResponse = JSON.parse(validationSuccess);
 
-      if (!parsedResponse.accepted.length) {
-        setFormErrors(businessUserForm, parsedResponse);
-      } else {
-        showThankYouMessage();
-      }
+        if (!parsedResponse.accepted.length) {
+          setFormErrors(businessUserForm, parsedResponse);
+        } else {
+          showThankYouMessage();
+        }
+      });
     });
-  });
+  }
 
-  residentUserForm.addEventListener("submit", event => {
+  if (residentUserForm) {
+    residentUserForm.addEventListener("submit", event => {
+      event.preventDefault();
+
+      hideFormErrors();
+
+      let formData = getResidentUserFormData(new FormData(residentUserForm));
+      let ajaxRequest = initAjaxRequest("post", "/signup");
+      ajaxRequest.send(formData);
+
+      getAjaxResponse(ajaxRequest).then(validationSuccess => {
+        let parsedResponse = JSON.parse(validationSuccess);
+
+        if (!parsedResponse.accepted.length) {
+          setFormErrors(residentUserForm, parsedResponse);
+        } else {
+          showThankYouMessage();
+        }
+      });
+    });
+  }
+
+  /**
+   *
+   * @param {Object} form - The HTMLForm object
+   * @param {Object} validationErrors - Form validation errors as an Object
+   */
+  function setFormErrorsNew(form, validationErrors) {
+    let objectKeys = Object.keys(validationErrors);
+    for (let i = 0, l = objectKeys.length; i < l; i++) {
+      let key = objectKeys[i];
+      let fieldErrorContainer = form.querySelector(
+        `#${key.toLowerCase()}-error`
+      );
+      fieldErrorContainer.innerText = validationErrors[key];
+      fieldErrorContainer.classList.remove("hidden");
+    }
+  }
+
+  contactForm.addEventListener("submit", event => {
     event.preventDefault();
-
     hideFormErrors();
 
-    let formData = getResidentUserFormData(new FormData(residentUserForm));
-    let ajaxRequest = initAjaxRequest("post", "/signup");
-    ajaxRequest.send(formData);
+    let ajaxRequest = initAjaxRequest("post", "/contact-us");
+    ajaxRequest.setRequestHeader(
+      "Content-Type",
+      "application/x-www-form-urlencoded"
+    );
 
-    getAjaxResponse(ajaxRequest).then(validationSuccess => {
-      let parsedResponse = JSON.parse(validationSuccess);
+    ajaxRequest.send(new URLSearchParams(new FormData(contactForm)).toString());
 
-      if (!parsedResponse.accepted.length) {
-        setFormErrors(residentUserForm, parsedResponse);
+    getAjaxResponse(ajaxRequest).then(function(response) {
+      let responseObj = JSON.parse(response);
+      console.log(responseObj);
+
+      if (responseObj.valid !== undefined && responseObj.valid === false) {
+        setFormErrorsNew(contactForm, responseObj.invalidFields);
       } else {
-        showThankYouMessage();
+        let thankYouMsg = document.getElementById("thank-you");
+        contactForm.classList.add("hidden");
+        thankYouMsg.classList.remove("hidden");
       }
     });
   });

@@ -9,13 +9,8 @@ const signup = {
     if (userType === "business") {
       isFieldsValid = validate.businessUser({
         businessName: userDetails.businessName,
-        businessSector: userDetails.businessSector,
         businessAbout: userDetails.businessAbout,
-        businessServices: userDetails.businessServices,
         businessAddress: userDetails.businessAddress,
-        businessCity: userDetails.businessCity,
-        businessSuburb: userDetails.businessSuburb,
-        businessPostcode: userDetails.businessPostcode,
         businessEmail: userDetails.businessEmail,
         newsletter: userDetails.newsletter
       });
