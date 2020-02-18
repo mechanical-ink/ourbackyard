@@ -8,16 +8,16 @@ const signup = {
 
     if (userType === "business") {
       isFieldsValid = validate.businessUser({
-        businessName: userDetails.businessName,
-        businessAbout: userDetails.businessAbout,
-        businessAddress: userDetails.businessAddress,
-        businessEmail: userDetails.businessEmail,
+        businessName: userDetails.businessname,
+        businessAbout: userDetails.businessabout,
+        businessAddress: userDetails.businessaddress,
+        businessEmail: userDetails.businessemail,
         newsletter: userDetails.newsletter
       });
     } else {
       isFieldsValid = validate.residentialUser({
-        userName: userDetails.userName,
-        userEmail: userDetails.userEmail,
+        userName: userDetails.username,
+        userEmail: userDetails.useremail,
         newsletter: userDetails.newsletter
       });
     }
@@ -30,7 +30,7 @@ const signup = {
     }
 
     let confirmationToEmail =
-      userDetails.businessEmail || userDetails.userEmail;
+      userDetails.businessemail || userDetails.useremail;
     let mailBody = mailUtils.getUserSignupBody(userDetails, userType);
     let mailResponse = await sendMail.newSignup(mailBody);
 

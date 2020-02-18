@@ -1,16 +1,17 @@
 section(id="business-user" class="business-user hidden" aria-hidden="true")
   form(id="business-user-form" name="business" action="/sign-up-business" method="post")
+    input(type="hidden" name="usertype" value="business")
     fieldset
       legend Business Information
 
       div(class="field-group")
         label(for="business-name") Business name
-        input(type="text" id="business-name" name="business-name" required)
+        input(type="text" id="business-name" name="businessname" required)
         p(id="businessname-error" class="validation-msg error hidden")
 
       div(class="field-group")
         label(for="business-about") About your business
-        textarea(id="business-about" name="business-about" rows="5" required)
+        textarea(id="business-about" name="businessabout" rows="5" required)
         p(id="businessabout-error" class="validation-msg error hidden")
 
     fieldset
@@ -18,7 +19,7 @@ section(id="business-user" class="business-user hidden" aria-hidden="true")
 
       div(class="field-group")
         label(for="business-address") Business address
-        textarea(id="business-address" name="business-address" rows="5" required)
+        textarea(id="business-address" name="businessaddress" rows="5" required)
         p(id="businessaddress-error" class="validation-msg error hidden")
 
     fieldset
@@ -26,7 +27,7 @@ section(id="business-user" class="business-user hidden" aria-hidden="true")
 
       div(class="field-group")
         label(for="business-email") Email address
-        input(type="email" id="business-email" name="business-email" required)
+        input(type="email" id="business-email" name="businessemail" required)
         p(id="businessemail-error" class="validation-msg error hidden")
 
       div(class="field-group")

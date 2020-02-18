@@ -1,13 +1,14 @@
 section(id="resident" class="general-user hidden" aria-hidden="true")
   form(id="resident-form" name="user" action="/sign-up-user" method="post")
+    input(type="hidden" name="usertype" value="resident")
     div(class="field-group")
-      label(for="user-name") Your name
-      input(type="text" id="user-name" name="user-name" required)
+      label(for="username") Your name
+      input(type="text" id="user-name" name="username" required)
       p(id="username-error" class="validation-msg error hidden")
 
     div(class="field-group")
-      label(for="user-email") Email address
-      input(type="email" id="user-email" name="user-email" required)
+      label(for="useremail") Email address
+      input(type="email" id="user-email" name="useremail" required)
       p(id="useremail-error" class="validation-msg error hidden")
 
     div(class="field-group")
