@@ -172,29 +172,33 @@
     }
   }
 
-  contactForm.addEventListener("submit", event => {
-    event.preventDefault();
-    hideFormErrors();
+  if (contactForm) {
+    contactForm.addEventListener("submit", event => {
+      event.preventDefault();
+      hideFormErrors();
 
-    let ajaxRequest = initAjaxRequest("post", "/contact-us");
-    ajaxRequest.setRequestHeader(
-      "Content-Type",
-      "application/x-www-form-urlencoded"
-    );
+      let ajaxRequest = initAjaxRequest("post", "/contact-us");
+      ajaxRequest.setRequestHeader(
+        "Content-Type",
+        "application/x-www-form-urlencoded"
+      );
 
-    ajaxRequest.send(new URLSearchParams(new FormData(contactForm)).toString());
+      ajaxRequest.send(
+        new URLSearchParams(new FormData(contactForm)).toString()
+      );
 
-    getAjaxResponse(ajaxRequest).then(function(response) {
-      let responseObj = JSON.parse(response);
-      console.log(responseObj);
+      getAjaxResponse(ajaxRequest).then(function(response) {
+        let responseObj = JSON.parse(response);
+        console.log(responseObj);
 
-      if (responseObj.valid !== undefined && responseObj.valid === false) {
-        setFormErrorsNew(contactForm, responseObj.invalidFields);
-      } else {
-        let thankYouMsg = document.getElementById("thank-you");
-        contactForm.classList.add("hidden");
-        thankYouMsg.classList.remove("hidden");
-      }
+        if (responseObj.valid !== undefined && responseObj.valid === false) {
+          setFormErrorsNew(contactForm, responseObj.invalidFields);
+        } else {
+          let thankYouMsg = document.getElementById("thank-you");
+          contactForm.classList.add("hidden");
+          thankYouMsg.classList.remove("hidden");
+        }
+      });
     });
-  });
+  }
 })();

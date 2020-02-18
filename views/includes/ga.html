@@ -1,9 +1,9 @@
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151005710-3"></script>
+<script src="../static/js/libs/dnt-helper.js"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-151005710-3');
+  if (!_dntEnabled()) {
+    window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
+    ga('create', 'UA-151005710-3', 'auto');
+    ga('send', 'pageview');
+  }
 </script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
