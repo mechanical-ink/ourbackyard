@@ -3,15 +3,10 @@ const mailUtils = {
     if (userType === "business") {
       return `Hi there\r\n
         A new ${userType} just signed up on Ourbackyard.co.za! Here are the details:\n
-        Business name: ${signupDetails.businessName}\n
-        Business sector: ${signupDetails.businessSector}\n
-        About: ${signupDetails.businessAbout}\n
-        Business services: ${signupDetails.businessServices}\n
-        Business address: ${signupDetails.businessAddress}\n
-        Business city: ${signupDetails.businessCity}\n
-        Business suburb: ${signupDetails.businessSuburb}\n
-        Business postal code: ${signupDetails.businessPostcode}\n
-        Business email: ${signupDetails.businessEmail}\n
+        Business name: ${signupDetails.businessname}\n
+        About: ${signupDetails.businessabout}\n
+        Business address: ${signupDetails.businessaddress}\n
+        Business email: ${signupDetails.businessemail}\n
         Newsletter signup: ${signupDetails.newsletter}\r\n
         --\n
         Kind Regards,\n
@@ -19,8 +14,8 @@ const mailUtils = {
     } else {
       return `Hi there\r\n
         A new ${userType} just signed up on Ourbackyard.co.za! Here are the details:\n
-        Name: ${signupDetails.userName}\n
-        Email address: ${signupDetails.userEmail}\n
+        Name: ${signupDetails.username}\n
+        Email address: ${signupDetails.useremail}\n
         Newsletter signup: ${signupDetails.newsletter}\r\n
         --\n
         Kind Regards,\n

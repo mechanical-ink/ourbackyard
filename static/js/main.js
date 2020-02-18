@@ -67,8 +67,8 @@
   function getResidentUserFormData(formData) {
     return JSON.stringify({
       userType: "resident",
-      userName: formData.get("user-name"),
-      userEmail: formData.get("user-email"),
+      userName: formData.get("username"),
+      userEmail: formData.get("useremail"),
       newsletter: formData.get("newsletter")
     });
   }
@@ -117,9 +117,14 @@
 
       hideFormErrors();
 
-      let formData = getBusinessUserFormData(new FormData(businessUserForm));
       let ajaxRequest = initAjaxRequest("post", "/signup");
-      ajaxRequest.send(formData);
+      ajaxRequest.setRequestHeader(
+        "Content-Type",
+        "application/x-www-form-urlencoded"
+      );
+      ajaxRequest.send(
+        new URLSearchParams(new FormData(businessUserForm)).toString()
+      );
 
       getAjaxResponse(ajaxRequest).then(validationSuccess => {
         let parsedResponse = JSON.parse(validationSuccess);
@@ -139,9 +144,14 @@
 
       hideFormErrors();
 
-      let formData = getResidentUserFormData(new FormData(residentUserForm));
       let ajaxRequest = initAjaxRequest("post", "/signup");
-      ajaxRequest.send(formData);
+      ajaxRequest.setRequestHeader(
+        "Content-Type",
+        "application/x-www-form-urlencoded"
+      );
+      ajaxRequest.send(
+        new URLSearchParams(new FormData(residentUserForm)).toString()
+      );
 
       getAjaxResponse(ajaxRequest).then(validationSuccess => {
         let parsedResponse = JSON.parse(validationSuccess);
@@ -189,7 +199,6 @@
 
       getAjaxResponse(ajaxRequest).then(function(response) {
         let responseObj = JSON.parse(response);
-        console.log(responseObj);
 
         if (responseObj.valid !== undefined && responseObj.valid === false) {
           setFormErrorsNew(contactForm, responseObj.invalidFields);
