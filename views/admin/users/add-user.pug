@@ -1,0 +1,38 @@
+doctype html
+html(lang="en")
+  include ../../includes/head.pug
+  body
+    div(class="wrapper internal")
+      header(class="site-header")
+        a(href="/")
+          h1(class="logo")
+            span(class="visually-hidden") Ourbackyard
+
+    include ../includes/nav.pug
+
+    main(class="wrapper internal")
+      section(class="create-user")
+        h1 Add User
+
+        if success
+          p(class="success") User account successfully created
+
+        form(id="add-user" name="user" action="/admin/add-user" method="post")
+          div(class="field-group")
+            label(for="name") Name
+            input(type="text" id="name" name="name" required)
+            p(id="name-error" class="validation-msg error hidden")
+
+          div(class="field-group")
+            label(for="email") Email address
+            input(type="email" id="email" name="email" required)
+            p(id="email-error" class="validation-msg error hidden")
+
+          div(class="field-group")
+            label(for="password") Password
+            input(type="password" id="password" name="password" required)
+            p(id="password-error" class="validation-msg error hidden")
+
+          input(class="cta" type="submit" value="Create User")
+
+    include ../../includes/footer.pug

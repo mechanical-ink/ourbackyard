@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+
+  include ../includes/head.pug
+
+  body
+    div(class="wrapper")
+      header(class="site-header")
+        a(href="/")
+          h1(class="logo")
+            span(class="visually-hidden") Ourbackyard
+
+        nav(class="main-nav")
+          ul
+            if locals.user
+              li
+                a(href="/user") Profile
+              li
+                a(href="/logout") Logout
+            else
+              li
+                a(href="/login") Login
+
+      h1 Welcome #{user.nickname}
+      img(src=user.picture)
+      h2 User profile
+      p This is the content of <code>req.user</code>.
+      p Note: <code>_raw</code> and <code>_json</code> properties have been ommited.
+      pre
+        code #{userProfile}
+
+  include ../includes/footer.pug

@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+  include ../includes/head.pug
+  body
+    div(class="wrapper internal")
+      header(class="site-header")
+        a(href="/")
+          h1(class="logo")
+            span(class="visually-hidden") Ourbackyard
+
+    main(class="wrapper internal")
+      section(class="login card")
+        h1 Sign In To Your Account
+
+        form(id="login" name="login" action="auth/login" method="post")
+          p(id="form-error" class="validation-msg error hidden")
+
+          div(class="field-group")
+            label(for="email") Email
+            input(type="text" id="email" name="email" required)
+
+          div(class="field-group")
+            label(for="password") Password
+            input(type="text" id="password" name="password" required)
+
+          input(class="cta" type="submit" value="Sign In")
+
+    include ../includes/footer.pug
