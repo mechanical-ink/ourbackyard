@@ -90,54 +90,6 @@ main p {
   font-size: 1.3rem;
 }
 
-.business-user {
-  margin: 0 auto;
-  max-width: 600px;
-}
-
-.business-user::before {
-  display: block;
-  content: "";
-  margin: 0 auto;
-  background: transparent url("../media/business-users.svg") 0 0 no-repeat;
-  width: 340px;
-  height: 240px;
-}
-
-@media screen and (min-width: 63.9385em) {
-  .business-user::before {
-    margin-bottom: 30px;
-    width: 420px;
-    height: 320px;
-  }
-}
-
-.general-user {
-  margin: 0 auto;
-  max-width: 600px;
-}
-
-.general-user::before {
-  display: block;
-  content: "";
-  margin: 0 auto;
-  background: transparent url("../media/general-users.svg") 0 0 no-repeat;
-  width: 300px;
-  height: 240px;
-}
-
-@media screen and (min-width: 63.9385em) {
-  .general-user::before {
-    margin-bottom: 30px;
-    width: 500px;
-    height: 400px;
-  }
-}
-
-.newsletter-note {
-  max-width: 340px;
-}
-
 footer {
   background-color: #d0cde1;
   color: #333;
