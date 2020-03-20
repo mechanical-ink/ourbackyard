@@ -1,0 +1,16 @@
+extends ../base/layout.pug
+
+block content
+  main(class="signup girdle")
+    h2 Complete your signup
+    p Thank you for joining the Ourbackyard community!
+    p(class="readable-line-length") To complete the signup of your account, please choose one of the account types below. If you are signing up your business, choose the <b>business</b> account type. If you are looking for a local business, then choose the <b>individual</b> is the one for you.
+
+    form(name="complete-signup" method="post" action="select-account-type")
+      label(for="business-user") Business
+        input(type="radio" id="business-user" name="role" value="business")
+
+      label(for="individual-user") Individual
+        input(type="radio" id="individual-user" name="role" value="individual")
+
+      button(type="submit" class="cta primary") Complete Signup

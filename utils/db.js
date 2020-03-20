@@ -11,9 +11,16 @@ const dbUtils = {
     const DBPROTOCOL = process.env.DB_PROROCOL;
     const USERNAME = process.env.DB_USER;
     const PASSWORD = process.env.DB_PASS;
-    const MONGOURI = `${DBPROTOCOL}://${USERNAME}:${PASSWORD}@${DBHOST}/${dbName}?retryWrites=true&w=majority`;
 
-    return mongoose.connect(MONGOURI, {
+    let mongoURI = "";
+
+    if (USERNAME) {
+      mongoURI = `${DBPROTOCOL}://${USERNAME}:${PASSWORD}@${DBHOST}/${dbName}?retryWrites=true&w=majority`;
+    } else {
+      mongoURI = `${DBPROTOCOL}://${DBHOST}/${dbName}?retryWrites=true&w=majority`;
+    }
+
+    return mongoose.connect(mongoURI, {
       useCreateIndex: true,
       useNewUrlParser: true,
       useUnifiedTopology: true

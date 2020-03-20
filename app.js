@@ -12,6 +12,7 @@ const rollbar = new Rollbar("e752d9d0d9b0426a83a74b354d100be8");
 const userInViews = require("./lib/middleware/userInViews");
 const adminRouter = require("./routes/admin");
 const authRouter = require("./routes/auth");
+const signupRouter = require("./routes/signup");
 const usersRouter = require("./routes/users");
 const routes = require("./routes/router");
 
@@ -32,7 +33,7 @@ const sessionConfig = {
 
 if (app.get("env") === "production") {
   // Use secure cookies in production (requires SSL/TLS)
-  sess.cookie.secure = true;
+  sessionConfig.cookie.secure = true;
 }
 
 app.use(session(sessionConfig));
@@ -75,6 +76,7 @@ app.use("/static", express.static(path.join(__dirname, "static")));
 app.use(userInViews());
 app.use("/", adminRouter);
 app.use("/", authRouter);
+app.use("/", signupRouter);
 app.use("/", usersRouter);
 app.use("/", routes);
 
