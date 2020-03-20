@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font: 16px/1.5 serif;
+  font: 18px/1.5 serif;
 }
 
 .wrapper {
@@ -12,6 +12,39 @@ body {
 
 .wrapper.internal {
   min-height: unset;
+}
+
+.girdle {
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: center;
+}
+
+/* SIGNUP */
+.signup form {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.signup form::before {
+  display: block;
+  content: "";
+  background: transparent url("../media/signup/complete-signup.svg") 0 0
+    no-repeat;
+  background-size: 340px auto;
+  margin: 0 auto;
+  width: 340px;
+  height: 220px;
+}
+
+.signup label {
+  padding: 20px;
+}
+
+.signup button {
+  display: block;
+  margin: 40px auto 0;
+  max-width: 250px;
 }
 
 main {
@@ -215,4 +248,9 @@ input[type="checkbox"] {
   /* !important required to ensure element is hidden when mixin is applied */
   position: absolute !important; /* stylelint-disable-line declaration-no-important */
   width: 1px;
+}
+
+.readable-line-length {
+  margin: 20px auto;
+  max-width: 600px;
 }

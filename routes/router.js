@@ -9,6 +9,7 @@ const signup = require("../utils/signup");
 const validate = require("../utils/validator");
 
 router.get("/", (req, res) => {
+  console.log(req.session.user);
   res.render("index");
 });
 
@@ -21,8 +22,8 @@ router.get("/contact", (req, res) => {
 });
 
 router.post("/contact-us", (req, res) => {
-  let reqBody = req.body;
-  let validationResult = validate.contactUs(reqBody);
+  const reqBody = req.body;
+  const validationResult = validate.contactUs(reqBody);
 
   if (!validationResult.valid) {
     res.json(validationResult);
@@ -37,7 +38,7 @@ router.post("/contact-us", (req, res) => {
 });
 
 router.post("/signup", (req, res) => {
-  let reqBody = req.body;
+  const reqBody = req.body;
   signup
     .newSignup(reqBody, reqBody.usertype)
     .then(response => {

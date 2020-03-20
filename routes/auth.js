@@ -5,6 +5,9 @@ const util = require("util");
 const url = require("url");
 const querystring = require("querystring");
 
+const db = require("../utils/db");
+const UserAPI = require("../models/user-api");
+
 require("dotenv").config();
 
 // Perform the login, after login Auth0 will redirect to callback
@@ -29,16 +32,37 @@ router.get("/callback", function(req, res, next) {
       return res.redirect("/login");
     }
 
-    req.logIn(user, function(err) {
-      if (err) {
-        return next(err);
-      }
+    // "auth0|5e7488231af4190c19cfe8aa"
+    console.log(user);
 
-      const returnTo = req.session.returnTo;
-      delete req.session.returnTo;
+    db.connect("ourbackyard")
+      .then(async () => {
+        const userExists = await UserAPI.findUserByUserID(user.user_id);
 
-      res.redirect(returnTo || "/account/user");
-    });
+        if (userExists.length === 0) {
+          // this is a new user
+          // store returned user in session
+          req.session.user = user;
+          // redirect to signup index to complete
+          // account set-up
+          res.redirect("signup/select-account-type");
+        } else {
+          // existing user
+          req.logIn(user, function(err) {
+            if (err) {
+              return next(err);
+            }
+
+            const returnTo = req.session.returnTo;
+            delete req.session.returnTo;
+
+            res.redirect(returnTo || "/account/user");
+          });
+        }
+      })
+      .catch(error => {
+        console.error(error);
+      });
   })(req, res, next);
 });
 
