@@ -71,7 +71,6 @@ router.post("/admin/edit-user", secured(), (req, res) => {
 });
 
 router.post("/admin/update-user", secured(), (req, res) => {
-  console.log(req.body, req.body.email);
   dbUtils
     .connect("ourbackyard")
     .then(async () => {

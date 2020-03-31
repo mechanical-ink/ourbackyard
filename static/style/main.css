@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font: 18px/1.5 serif;
+  font: 18px/1.5 "Poppins", sans-serif;
 }
 
 .wrapper {
@@ -121,13 +121,6 @@ main p {
 
 .what-we-do p {
   font-size: 1.3rem;
-}
-
-footer {
-  background-color: #d0cde1;
-  color: #333;
-  margin-top: 100px;
-  padding: 50px;
 }
 
 /* forms */
