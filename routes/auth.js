@@ -32,9 +32,6 @@ router.get("/callback", function(req, res, next) {
       return res.redirect("/login");
     }
 
-    // "auth0|5e7488231af4190c19cfe8aa"
-    console.log(user);
-
     db.connect("ourbackyard")
       .then(async () => {
         const userExists = await UserAPI.findUserByUserID(user.user_id);
