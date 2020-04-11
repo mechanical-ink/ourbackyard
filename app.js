@@ -9,6 +9,9 @@ const Auth0Strategy = require("passport-auth0");
 const Rollbar = require("rollbar");
 const rollbar = new Rollbar("e752d9d0d9b0426a83a74b354d100be8");
 
+const { SitemapStream, streamToPromise } = require("sitemap");
+const { createGzip } = require("zlib");
+
 const userInViews = require("./lib/middleware/userInViews");
 const adminRouter = require("./routes/admin");
 const authRouter = require("./routes/auth");
@@ -23,12 +26,45 @@ require("dotenv").config();
 
 app.set("view engine", "pug");
 
+let sitemap = null;
+
+app.get("/sitemap.xml", (req, res) => {
+  res.header("Content-Type", "application/xml");
+  res.header("Content-Encoding", "gzip");
+  // if we have a cached entry send it
+  if (sitemap) {
+    res.send(sitemap);
+  }
+
+  try {
+    const smStream = new SitemapStream({
+      hostname: "https://www.ourbackyard.co.za/",
+    });
+    const pipeline = smStream.pipe(createGzip());
+
+    // pipe your entries or directly write them.
+    smStream.write({ url: "/", changefreq: "monthly", priority: 1.0 });
+    smStream.write({ url: "/about", changefreq: "monthly", priority: 0.8 });
+    smStream.write({ url: "/contact", changefreq: "monthly", priority: 0.8 });
+    smStream.end();
+
+    // cache the response
+    streamToPromise(pipeline).then((sm) => (sitemap = sm));
+    // stream write the response
+    pipeline.pipe(res).on("error", (error) => {
+      throw error;
+    });
+  } catch (error) {
+    res.status(500).end();
+  }
+});
+
 // config express-session
 const sessionConfig = {
   secret: process.env.SESSION_SECRET,
   cookie: {},
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
 };
 
 if (app.get("env") === "production") {
@@ -45,9 +81,9 @@ const strategy = new Auth0Strategy(
     clientID: process.env.AUTH0_CLIENT_ID,
     clientSecret: process.env.AUTH0_CLIENT_SECRET,
     callbackURL:
-      process.env.AUTH0_CALLBACK_URL || "http://localhost:3000/callback"
+      process.env.AUTH0_CALLBACK_URL || "http://localhost:3000/callback",
   },
-  function(accessToken, refreshToken, extraParams, profile, done) {
+  function (accessToken, refreshToken, extraParams, profile, done) {
     // accessToken is the token to call Auth0 API (not needed in the most cases)
     // extraParams.id_token has the JSON Web Token
     // profile has all the information from the user
@@ -61,11 +97,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // TODO: You can use this section to keep a smaller payload, ex. user.id
-passport.serializeUser(function(user, done) {
+passport.serializeUser(function (user, done) {
   done(null, user);
 });
 
-passport.deserializeUser(function(user, done) {
+passport.deserializeUser(function (user, done) {
   done(null, user);
 });
 
