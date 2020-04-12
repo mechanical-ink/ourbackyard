@@ -1,5 +1,23 @@
 extends base/layout.pug
 
+block meta_data
+  meta(property="og:type" content="website")
+  meta(property="og:site_name" content="Ourbackyard")
+  meta(property="og:locale" content="en_ZA")
+  meta(property="og:url" content="https://www.ourbackyard.co.za/")
+  meta(property="og:title" content="About Ourbackyard - Connecting people with local business")
+  meta(property="og:description" content="What if we could get the products and services we need while supporting the very business owners that share our community, that are our very neighbors?")
+  meta(property="og:image" content="https://www.ourbackyard.co.za/static/media/structured-data/about.jpg")
+  meta(property="og:image:width" content="1200")
+  meta(property="og:image:height" content="1200")
+  meta(property="og:image:alt" content="A community of young people at an outdoor restaurant")
+
+  meta(name="twitter:card" content="summary_large_image")
+  meta(name="twitter:title" content="About Ourbackyard - Connecting people with local business")
+  meta(name="twitter:description" content="What if we could get the products and services we need while supporting the very business owners that share our community, that are our very neighbors?")
+  meta(name="twitter:image" content="https://www.ourbackyard.co.za/static/media/structured-data/about.jpg")
+  meta(name="twitter:image:alt" content="A community of young people at an outdoor restaurant")
+
 block content
   main(class="internal")
     div(class="hero-img")
@@ -23,3 +41,8 @@ block content
         p All comments and ratings displayed on Ourbackyard will always go through real human moderation. In instances where this is not the case, or should our practice in this regard ever change, you would be the first to know.
 
         p We are very excited about the future of Ourbackyard and supporting strong local communities. We hope that you share our excitement and would <a href="/contact">love to hear your ideas</a> for how Ourbackyard can help you and your business. We want Ourbackyard to be the first place you turn to.
+
+block ld_json
+  <script type="application/ld+json">
+    include structured-data/about.json
+  </script>
