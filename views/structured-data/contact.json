@@ -1,0 +1,37 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "https://schema.org/ContactPage",
+  "beadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://www.ourbackyard.co.za/",
+          "name": "Homepage"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@id": "https://www.ourbackyard.co.za/contact",
+          "name": "Contact Ourbackyard"
+        }
+      }
+    ]
+  },
+  "about": "Information on how to contact Ourbackyard",
+  "abstract": "We are very excited about the future of Ourbackyard and supporting strong local communities. We hope that you share our excitement and would love to hear your ideas for how Ourbackyard can help you and your business.",
+  "author": {
+    "@type": "Organization",
+    "url": "https://www.ourbackyard.co.za/",
+    "logo": "https://www.ourbackyard.co.za/static/media/structured-data/logo.png"
+  },
+  "accessModeSufficient": {
+    "@type": "ItemList",
+    "itemListElement": ["textual", "visual"],
+    "description": "Text and images"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "https://schema.org/AboutPage",
+  "beadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://www.ourbackyard.co.za/",
+          "name": "Homepage"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@id": "https://www.ourbackyard.co.za/about",
+          "name": "About Ourbackyard"
+        }
+      }
+    ]
+  },
+  "about": "Information about the mission of Ourbackyard",
+  "abstract": "What if finding a local business could be as easy as finding the common big-name stores we use every day? What if we could get the products and services we need while supporting the very business owners that share our community, that are our very neighbors? Would this not lead to more connected, tightly knit, blossoming communities?",
+  "author": {
+    "@type": "Organization",
+    "url": "https://www.ourbackyard.co.za/",
+    "logo": "https://www.ourbackyard.co.za/static/media/structured-data/logo.png"
+  },
+  "accessModeSufficient": {
+    "@type": "ItemList",
+    "itemListElement": ["textual", "visual"],
+    "description": "Text and images"
+  }
+}
