@@ -20,6 +20,18 @@ router.get("/contact", (req, res) => {
   res.render("contact");
 });
 
+router.get("/privacy", (req, res) => {
+  res.render("policies/privacy");
+});
+
+router.get("/terms", (req, res) => {
+  res.render("policies/terms");
+});
+
+router.get("/cookie-policy", (req, res) => {
+  res.render("policies/cookie-policy");
+});
+
 router.post("/contact-us", (req, res) => {
   const reqBody = req.body;
   const validationResult = validate.contactUs(reqBody);
@@ -29,7 +41,7 @@ router.post("/contact-us", (req, res) => {
     return;
   }
 
-  contact.sendMessage(reqBody).then(response => {
+  contact.sendMessage(reqBody).then((response) => {
     if (response.accepted.length) {
       res.json(response);
     }
@@ -40,12 +52,12 @@ router.post("/signup", (req, res) => {
   const reqBody = req.body;
   signup
     .newSignup(reqBody, reqBody.usertype)
-    .then(response => {
+    .then((response) => {
       if (response.accepted.length) {
         res.json(response);
       }
     })
-    .catch(error => {
+    .catch((error) => {
       rollbar.error(error, req);
       console.error(`Signup error: ${error.toString()}`);
     });

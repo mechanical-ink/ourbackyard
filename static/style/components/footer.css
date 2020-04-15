@@ -3,6 +3,11 @@ footer {
   text-align: center;
 }
 
+footer a:link,
+footer a:visited {
+  color: #fff;
+}
+
 footer .social {
   background-color: #decbf4;
 }
@@ -51,4 +56,17 @@ footer .meta {
   color: #fff;
   padding: 50px;
   min-height: 120px;
+}
+
+footer .legal li {
+  margin: 10px 0;
+}
+
+@media screen and (min-width: 63.9385em) {
+  footer .legal {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto 0;
+    max-width: 650px;
+  }
 }
