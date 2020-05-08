@@ -1,0 +1,25 @@
+.signup form {
+  margin: 0 auto;
+  max-width: 600px;
+
+  &::before {
+    display: block;
+    content: "";
+    background: transparent url("../media/signup/complete-signup.svg") 0 0
+      no-repeat;
+    background-size: 340px auto;
+    margin: 0 auto;
+    width: 340px;
+    height: 220px;
+  }
+
+  label {
+    padding: 20px;
+  }
+
+  button {
+    display: block;
+    margin: 40px auto 0;
+    max-width: 250px;
+  }
+}

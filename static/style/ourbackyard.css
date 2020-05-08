@@ -1,0 +1,311 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0; }
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0; }
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5; }
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none; }
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto; }
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block; }
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em; }
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit; }
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important; } }
+
+@font-face {
+  font-family: "Poppins";
+  font-display: swap;
+  src: url("../typography/Poppins-Regular.woff2") format("woff2"), url("../typography/Poppins-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Poppins";
+  font-display: swap;
+  src: url("../typography/Poppins-Bold.woff2") format("woff2"), url("../typography/Poppins-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font: 18px/1.5 "Poppins", sans-serif; }
+
+main {
+  padding: 20px; }
+  main .internal {
+    padding: 0; }
+  main p {
+    margin: 20px 0; }
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1400px;
+  min-height: 76vh; }
+
+.wrapper.internal {
+  min-height: unset; }
+
+.girdle {
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: center; }
+
+.cta-container {
+  margin-top: 50px;
+  margin-bottom: 50px; }
+
+fieldset {
+  border: 0; }
+  fieldset legend {
+    font-size: 2rem; }
+
+.field-group {
+  display: block;
+  padding: 10px; }
+  .field-group label {
+    display: block; }
+  .field-group input,
+  .field-group textarea {
+    padding: 10px;
+    width: 100%; }
+    @media all and (min-width: 47.9385em) {
+      .field-group input,
+      .field-group textarea {
+        width: 70%; } }
+  .field-group .inline-label {
+    display: inline-block; }
+  .field-group input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto; }
+
+.cta {
+  background-color: #523766;
+  color: #fff;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 6px;
+  min-width: 120px;
+  cursor: pointer; }
+  .cta:hover, .cta:focus, .cta:active {
+    background-color: #785a8f; }
+
+.main-cta {
+  width: 300px;
+  padding: 20px;
+  font-size: 1.3rem;
+  letter-spacing: 0.035rem; }
+
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.logo {
+  margin-top: 20px;
+  margin-bottom: 0; }
+  .logo::before {
+    display: block;
+    content: "";
+    background: transparent url("../media/ourbackyard-logo.svg") 0 0 no-repeat;
+    width: 370px;
+    height: 100px; }
+
+.hero-img {
+  background: transparent url("../media/about-hero.jpg") 0 30% no-repeat;
+  background-size: cover;
+  margin: 40px 0;
+  width: 100%;
+  height: 400px;
+  overflow: hidden; }
+
+.hero-img-contact {
+  background: transparent url("../media/contact-hero.jpg") 0 50% no-repeat;
+  background-size: cover;
+  margin: 40px 0;
+  width: 100%;
+  height: 400px;
+  overflow: hidden; }
+
+.policy {
+  text-align: left; }
+
+.validation-msg,
+.thank-you {
+  padding: 10px;
+  border: 5px solid #333;
+  max-width: 340px; }
+
+.thank-you {
+  text-align: center; }
+
+.thank-you-contact {
+  margin: 0 auto;
+  max-width: 70%;
+  font-size: 2rem;
+  text-align: center; }
+
+.error {
+  background-color: #ad1111;
+  color: #fff;
+  border-color: #c45e5e; }
+
+.success {
+  background-color: #1b6628;
+  color: #fff;
+  margin: 0 auto;
+  border-color: #41b554;
+  max-width: 420px; }
+
+footer {
+  margin-top: 100px;
+  text-align: center; }
+  footer a:link,
+  footer a:visited {
+    color: #fff; }
+  footer .social {
+    background-color: #decbf4; }
+    footer .social ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 0 auto;
+      padding: 0;
+      height: 120px;
+      max-width: 480px; }
+      footer .social ul li {
+        display: inline; }
+    footer .social a::before {
+      display: inline-block;
+      content: "";
+      background-size: 68px;
+      width: 68px;
+      height: 68px; }
+    footer .social .instagram::before {
+      background: transparent url("../media/social/instagram.svg") 0 0 no-repeat; }
+    footer .social .twitter::before {
+      background: transparent url("../media/social/twitter.svg") 0 0 no-repeat; }
+    footer .social .facebook::before {
+      background: transparent url("../media/social/facebook.svg") 0 0 no-repeat; }
+    footer .social .facebook-messenger::before {
+      background: transparent url("../media/social/facebook-messenger.svg") 0 0 no-repeat; }
+  footer .meta {
+    background-color: #4a4b53;
+    color: #fff;
+    padding: 50px;
+    min-height: 120px; }
+  @media screen and (min-width: 63.9385em) {
+    footer .legal {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px auto 0;
+      max-width: 650px; } }
+  footer .legal li {
+    margin: 10px 0; }
+
+.signup form {
+  margin: 0 auto;
+  max-width: 600px; }
+  .signup form::before {
+    display: block;
+    content: "";
+    background: transparent url("../media/signup/complete-signup.svg") 0 0 no-repeat;
+    background-size: 340px auto;
+    margin: 0 auto;
+    width: 340px;
+    height: 220px; }
+  .signup form label {
+    padding: 20px; }
+  .signup form button {
+    display: block;
+    margin: 40px auto 0;
+    max-width: 250px; }
+
+.what-we-do {
+  grid-area: what-we-do;
+  margin: 0 auto;
+  max-width: 90ch;
+  text-align: center; }
+  .what-we-do h2 {
+    font-size: 2rem;
+    line-height: 1.2; }
+    @media all and (min-width: 47.9385em) {
+      .what-we-do h2 {
+        font-size: 2.5rem; } }
+  .what-we-do p {
+    font-size: 1.3rem; }
+
+.hidden {
+  display: none; }
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  /* !important required to ensure element is hidden when mixin is applied */
+  position: absolute !important;
+  /* stylelint-disable-line declaration-no-important */
+  width: 1px; }
+
+.readable-line-length {
+  margin: 20px auto;
+  max-width: 600px; }
