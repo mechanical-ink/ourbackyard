@@ -152,6 +152,12 @@ fieldset {
   font-size: 1.3rem;
   letter-spacing: 0.035rem; }
 
+.avatar {
+  margin: 20px auto;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px; }
+
 .site-header {
   display: flex;
   flex-direction: column;
@@ -182,6 +188,16 @@ fieldset {
   width: 100%;
   height: 400px;
   overflow: hidden; }
+
+.user-details {
+  margin-top: 40px; }
+  @media all and (min-width: 63.9385em) {
+    .user-details {
+      margin-top: inherit;
+      text-align: left; } }
+  .user-details dt {
+    margin-top: 20px;
+    font-weight: bold; }
 
 .policy {
   text-align: left; }
@@ -290,6 +306,25 @@ footer {
         font-size: 2.5rem; } }
   .what-we-do p {
     font-size: 1.3rem; }
+
+.user-profile {
+  text-align: center; }
+  @media all and (min-width: 63.9385em) {
+    .user-profile {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 80px; }
+      .user-profile .user-profile-header {
+        flex-basis: 45%; }
+      .user-profile .user-details {
+        flex-basis: 35%; } }
+  @media all and (min-width: 74.9375em) {
+    .user-profile {
+      justify-content: space-around; } }
+  .user-profile .user-profile-header h2 {
+    margin: 0 auto;
+    max-width: 320px; }
 
 .hidden {
   display: none; }

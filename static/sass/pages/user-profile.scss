@@ -1,0 +1,31 @@
+@import "../vars/media-queries";
+
+.user-profile {
+  text-align: center;
+
+  @media #{$mq-small-desktop-and-up} {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+
+    .user-profile-header {
+      flex-basis: 45%;
+    }
+
+    .user-details {
+      flex-basis: 35%;
+    }
+  }
+
+  @media #{$mq-large-desktop-and-up} {
+    justify-content: space-around;
+  }
+
+  .user-profile-header {
+    h2 {
+      margin: 0 auto;
+      max-width: 320px;
+    }
+  }
+}
