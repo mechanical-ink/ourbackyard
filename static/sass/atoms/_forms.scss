@@ -1,0 +1,35 @@
+fieldset {
+  border: 0;
+
+  legend {
+    font-size: 2rem;
+  }
+}
+
+.field-group {
+  display: block;
+  padding: 10px;
+
+  label {
+    display: block;
+  }
+
+  input,
+  textarea {
+    padding: 10px;
+    width: 100%;
+
+    @media #{$mq-tablet-and-up} {
+      width: 70%;
+    }
+  }
+
+  .inline-label {
+    display: inline-block;
+  }
+
+  input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto;
+  }
+}

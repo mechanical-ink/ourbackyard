@@ -1,0 +1,18 @@
+.user-profile {
+  text-align: center; }
+  @media all and (min-width: 63.9385em) {
+    .user-profile {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 80px; }
+      .user-profile .user-profile-header {
+        flex-basis: 45%; }
+      .user-profile .user-details {
+        flex-basis: 35%; } }
+  @media all and (min-width: 74.9375em) {
+    .user-profile {
+      justify-content: space-around; } }
+  .user-profile .user-profile-header h2 {
+    margin: 0 auto;
+    max-width: 320px; }
