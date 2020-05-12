@@ -24,7 +24,7 @@
   "author": "Schalk Neethling",
   "license": "MIT",
   "devDependencies": {
-    "cz-conventional-changelog": "3.1.0",
+    "cz-conventional-changelog": "3.2.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-config-standard": "^14.1.1",
