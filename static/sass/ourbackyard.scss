@@ -1,6 +1,7 @@
 @import "./utils/reset";
 
 @import "./vars/media-queries";
+@import "./vars/color-palette";
 
 @import "./atoms/typography";
 @import "./atoms/base";
@@ -11,6 +12,7 @@
 @import "./atoms/user-avatar";
 
 @import "./components/header";
+@import "./components/main-nav";
 @import "./components/logo";
 @import "./components/hero";
 

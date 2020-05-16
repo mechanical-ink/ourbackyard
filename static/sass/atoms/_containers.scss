@@ -1,7 +1,18 @@
 .wrapper {
   margin: 0 auto;
-  max-width: 1400px;
   min-height: 76vh;
+
+  @media #{$mq-tablet-and-up} {
+    max-width: 700px;
+  }
+
+  @media #{$mq-small-desktop-and-up} {
+    max-width: 900px;
+  }
+
+  @media #{$mq-large-desktop-and-up} {
+    max-width: 1200px;
+  }
 }
 
 .wrapper.internal {
@@ -12,9 +23,4 @@
   margin: 0 auto;
   max-width: 1200px;
   text-align: center;
-}
-
-.cta-container {
-  margin-top: 50px;
-  margin-bottom: 50px;
 }
