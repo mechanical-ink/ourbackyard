@@ -1,0 +1,29 @@
+.main-nav {
+  text-align: center;
+
+  @media #{$mq-tablet-and-up} {
+    text-align: right;
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 20px;
+    }
+
+    @media #{$mq-tablet-and-up} {
+      @supports (display: flex) {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0;
+
+        li {
+          flex-basis: 200px;
+          margin-bottom: inherit;
+        }
+      }
+    }
+  }
+}

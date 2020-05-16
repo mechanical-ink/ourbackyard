@@ -94,8 +94,16 @@ main {
 
 .wrapper {
   margin: 0 auto;
-  max-width: 1400px;
   min-height: 76vh; }
+  @media all and (min-width: 47.9385em) {
+    .wrapper {
+      max-width: 700px; } }
+  @media all and (min-width: 63.9385em) {
+    .wrapper {
+      max-width: 900px; } }
+  @media all and (min-width: 74.9375em) {
+    .wrapper {
+      max-width: 1200px; } }
 
 .wrapper.internal {
   min-height: unset; }
@@ -104,10 +112,6 @@ main {
   margin: 0 auto;
   max-width: 1200px;
   text-align: center; }
-
-.cta-container {
-  margin-top: 50px;
-  margin-bottom: 50px; }
 
 fieldset {
   border: 0; }
@@ -134,21 +138,20 @@ fieldset {
     width: auto; }
 
 .cta {
-  background-color: #523766;
+  background-color: #7548a8;
   color: #fff;
-  margin-left: 10px;
-  margin-top: 10px;
-  padding: 10px 20px;
+  padding: 10px 40px;
   border: 0;
-  border-radius: 6px;
-  min-width: 120px;
+  text-decoration: none;
   cursor: pointer; }
   .cta:hover, .cta:focus, .cta:active {
-    background-color: #785a8f; }
+    background-color: #a07fc6; }
 
 .main-cta {
-  width: 300px;
+  display: block;
+  margin: 50px auto;
   padding: 20px;
+  width: 300px;
   font-size: 1.3rem;
   letter-spacing: 0.035rem; }
 
@@ -159,9 +162,38 @@ fieldset {
   height: 200px; }
 
 .site-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
+  padding: 40px 0 80px; }
+  @media all and (min-width: 47.9385em) {
+    @supports (display: flex) {
+      .site-header {
+        display: flex;
+        align-items: center; }
+        .site-header a {
+          flex-basis: 30%; }
+        .site-header .main-nav {
+          flex-basis: 70%; }
+          .site-header .main-nav ul {
+            list-style: none; } } }
+
+.main-nav {
+  text-align: center; }
+  @media all and (min-width: 47.9385em) {
+    .main-nav {
+      text-align: right; } }
+  .main-nav ul {
+    padding: 0;
+    list-style: none; }
+    .main-nav ul li {
+      margin-bottom: 20px; }
+    @media all and (min-width: 47.9385em) {
+      @supports (display: flex) {
+        .main-nav ul {
+          display: flex;
+          justify-content: flex-end;
+          margin: 0; }
+          .main-nav ul li {
+            flex-basis: 200px;
+            margin-bottom: inherit; } } }
 
 .logo {
   margin-top: 20px;
@@ -170,8 +202,12 @@ fieldset {
     display: block;
     content: "";
     background: transparent url("../media/ourbackyard-logo.svg") 0 0 no-repeat;
+    margin: 0 auto;
     width: 370px;
     height: 100px; }
+    @media all and (min-width: 47.9385em) {
+      .logo::before {
+        margin: inherit; } }
 
 .hero-img {
   background: transparent url("../media/about-hero.jpg") 0 30% no-repeat;

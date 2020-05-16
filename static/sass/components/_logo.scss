@@ -6,7 +6,12 @@
     display: block;
     content: "";
     background: transparent url("../media/ourbackyard-logo.svg") 0 0 no-repeat;
+    margin: 0 auto;
     width: 370px;
     height: 100px;
+
+    @media #{$mq-tablet-and-up} {
+      margin: inherit;
+    }
   }
 }
