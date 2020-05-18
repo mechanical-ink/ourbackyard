@@ -137,14 +137,18 @@ fieldset {
     margin-right: 10px;
     width: auto; }
 
-.cta {
+.cta,
+a.cta {
   background-color: #7548a8;
   color: #fff;
   padding: 10px 40px;
   border: 0;
   text-decoration: none;
   cursor: pointer; }
-  .cta:hover, .cta:focus, .cta:active {
+  .cta:hover, .cta:focus, .cta:active,
+  a.cta:hover,
+  a.cta:focus,
+  a.cta:active {
     background-color: #a07fc6; }
 
 .main-cta {
@@ -180,6 +184,9 @@ fieldset {
   @media all and (min-width: 47.9385em) {
     .main-nav {
       text-align: right; } }
+  .main-nav a:not(.cta) {
+    color: #7548a8;
+    text-decoration: none; }
   .main-nav ul {
     padding: 0;
     list-style: none; }
@@ -361,6 +368,13 @@ footer {
   .user-profile .user-profile-header h2 {
     margin: 0 auto;
     max-width: 320px; }
+
+.user-edit.girdle {
+  text-align: left; }
+
+.user-edit .avatar,
+.user-edit .cta {
+  margin: 20px 0; }
 
 .hidden {
   display: none; }

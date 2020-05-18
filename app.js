@@ -16,7 +16,7 @@ const userInViews = require("./lib/middleware/userInViews");
 const adminRouter = require("./routes/admin");
 const authRouter = require("./routes/auth");
 const signupRouter = require("./routes/signup");
-const usersRouter = require("./routes/users");
+const accountRouter = require("./routes/account");
 const routes = require("./routes/router");
 
 const app = express();
@@ -113,7 +113,7 @@ app.use(userInViews());
 app.use("/", adminRouter);
 app.use("/", authRouter);
 app.use("/", signupRouter);
-app.use("/", usersRouter);
+app.use("/", accountRouter);
 app.use("/", routes);
 
 app.use(rollbar.errorHandler());

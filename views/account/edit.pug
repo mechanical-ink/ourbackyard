@@ -1,0 +1,27 @@
+extends ../base/layout.pug
+
+block content
+  main(role="main" class="girdle user-edit")
+    h2 User profile
+    p #{user.role}
+
+    img(class="avatar" src=user.avatar)
+
+    h3 Email address
+    p #{user.email}
+
+    form(id="update-user" name="update-user" action="/account/update" method="post")
+        input(type="hidden" name="userID" value=user.userID)
+        div(class="field-group")
+            label(for="first-name") First Name
+            input(type="text" id="first-name" name="firstName" value=user.firstName required)
+
+        div(class="field-group")
+            label(for="family-name") Last Name
+            input(type="text" id="family-name" name="familyName" value=user.familyName required)
+
+        div(class="field-group")
+            label(for="display-name") Display Name
+            input(type="text" id="display-name" name="displayName" value=user.displayName required)
+
+        button(type="submit" class="cta") Save

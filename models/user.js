@@ -5,35 +5,35 @@ const UserSchema = new mongoose.Schema(
     userID: {
       type: String,
       required: true,
-      unique: true
+      unique: true,
     },
     avatar: {
       type: String,
-      required: true
+      required: true,
     },
     displayName: {
       type: String,
-      required: true
+      required: true,
     },
     firstName: {
-      type: String
+      type: String,
     },
-    lastName: {
-      type: String
+    familyName: {
+      type: String,
     },
     email: {
       type: String,
       required: true,
-      unique: true
+      unique: true,
     },
     emailVerified: {
       type: Boolean,
-      required: true
+      required: true,
     },
     authProvider: {
-      type: String
+      type: String,
     },
-    role: String
+    role: String,
   },
   { timestamps: true }
 );
