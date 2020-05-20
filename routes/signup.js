@@ -9,9 +9,9 @@ router.get("/signup/select-account-type", async (req, res) => {
 
 router.post("/signup/select-account-type", async (req, res, next) => {
   const user = req.session.user;
-  const newUser = await UserAPI.addUser(user, req.body.role);
-  req.session.user = newUser;
-  req.logIn(user, function(err) {
+  const dbUser = await UserAPI.addUser(user, req.body.role);
+  req.session.user = dbUser;
+  req.logIn(user, function (err) {
     if (err) {
       return next(err);
     }

@@ -9,12 +9,25 @@ const addUser = (user, role) => {
   return User.create({
     userID: user.user_id,
     avatar: user.picture,
-    displayName: user.nickname,
+    firstName: user.name.givenName,
+    familyName: user.name.familyName,
+    displayName: user.displayName,
     email: user._json.email,
-    emailVerified: false,
+    emailVerified: user._json.email_verified,
     authProvider: user.provider,
-    role
+    role,
   });
+};
+
+/**
+ *
+ * @param {Object} userDetail - New user information submitted from UI
+ */
+const updateUser = (userDetail) => {
+  return User.findOneAndUpdate({ userID: userDetail.userID }, userDetail, {
+    new: true,
+    useFindAndModify: false,
+  }).exec();
 };
 
 /**
@@ -22,11 +35,12 @@ const addUser = (user, role) => {
  * This is the ID returned by Auth0
  * @param {String} userID - The user id
  */
-const findUserByUserID = userID => {
-  return User.find({ userID: userID }).exec();
+const findUserByUserID = (userID) => {
+  return User.findOne({ userID: userID }).exec();
 };
 
 module.exports = {
   addUser,
-  findUserByUserID
+  updateUser,
+  findUserByUserID,
 };

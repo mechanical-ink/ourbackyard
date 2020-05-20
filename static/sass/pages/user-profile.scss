@@ -5,16 +5,20 @@
 
   @media #{$mq-small-desktop-and-up} {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    margin-top: 80px;
 
     .user-profile-header {
-      flex-basis: 45%;
+      flex-basis: 100%;
+      margin-bottom: 60px;
     }
 
     .user-details {
-      flex-basis: 35%;
+      flex-basis: 25%;
+    }
+
+    .business-details {
+      flex-basis: 45%;
     }
   }
 

@@ -8,8 +8,10 @@ html(lang="en")
   include ../includes/style.pug
   body
     div(class="wrapper")
-      block header
-        include ../includes/header.pug
+      header(class="site-header")
+        block header
+          include ../includes/header.pug
+          include ../includes/navigation.pug
 
       block content
 

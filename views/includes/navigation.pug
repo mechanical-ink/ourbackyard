@@ -1,0 +1,12 @@
+nav(class="main-nav")
+    ul
+        if locals.user
+            li
+                a(href="/account/") View Profile
+            li
+                a(href="/account/edit") Edit Profile
+            li
+                a(href="/logout" class="cta") Logout
+        else
+            li
+                a(href="/login" class="cta") Login

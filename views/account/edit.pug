@@ -1,0 +1,44 @@
+extends ../base/layout.pug
+
+block content
+  main(role="main" class="girdle user-edit")
+    h2 Your profile
+
+    img(class="avatar" src=user.avatar)
+
+    h3 Email address
+    p #{user.email}
+
+    form(id="update-user" name="update-user" action="/account/update" method="post")
+        input(type="hidden" name="userID" value=user.userID)
+        div(class="field-group")
+            label(for="first-name") First Name
+            input(type="text" id="first-name" name="firstName" value=user.firstName required)
+
+        div(class="field-group")
+            label(for="family-name") Last Name
+            input(type="text" id="family-name" name="familyName" value=user.familyName required)
+
+        div(class="field-group")
+            label(for="display-name") Display Name
+            input(type="text" id="display-name" name="displayName" value=user.displayName required)
+
+        if user.role === "business"
+
+            div(class="field-group")
+                label(for="business-name") Business Name
+                input(type="text" id="business-name" name="businessName" value=user.businessName required)
+
+            div(class="field-group")
+                label(for="business-name") Website
+                input(type="text" id="business-name" name="businessWebsite" value=user.businessWebsite)
+
+            div(class="field-group")
+                label(for="business-about") About
+                textarea(id="business-about" name="businessAbout") #{user.businessAbout}
+
+            div(class="field-group")
+                label(for="business-email") Email
+                input(type="text" id="business-email" name="businessEmail" value=user.businessEmail required)
+
+        button(type="submit" class="cta") Save

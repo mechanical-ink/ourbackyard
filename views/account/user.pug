@@ -3,7 +3,7 @@ extends ../base/layout.pug
 block content
   main(role="main" class="girdle user-profile")
     header(class="user-profile-header")
-      img(class="avatar" src=user.picture)
+      img(class="avatar" src=user.avatar)
 
       h2 Welcome #{user.displayName}
 
@@ -11,10 +11,29 @@ block content
       h2 User profile
 
       dl
+        dt Fullname
+        dd #{user.firstName} #{user.familyName}
         dt Display name
         dd #{user.displayName}
         dt Email
-        dd #{user.emails[0].value}
-        dt Username
-        dd #{user.nickname}
+        dd #{user.email}
+
+    if user.role === "business"
+      div(class="business-details")
+        h2 Business Information
+
+        dl
+        if user.businessName
+          dt Business name
+          dd #{user.businessName}
+        if user.businessWebsite
+          dt Business website
+          dd #{user.businessWebsite}
+        if user.businessAbout
+          dt About your business
+          dd #{user.businessAbout}
+        if user.businessEmail
+          dt Business email
+          dd #{user.businessEmail}
+
 

@@ -1,4 +1,5 @@
-.user-details {
+.user-details,
+.business-details {
   margin-top: 40px;
 
   @media #{$mq-small-desktop-and-up} {
