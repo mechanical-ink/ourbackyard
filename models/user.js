@@ -30,6 +30,21 @@ const UserSchema = new mongoose.Schema(
       type: Boolean,
       required: true,
     },
+    businessName: {
+      type: String,
+    },
+    businessWebsite: {
+      type: String,
+    },
+    businessAbout: {
+      type: String,
+    },
+    businessAddress: {
+      type: String,
+    },
+    businessEmail: {
+      type: String,
+    },
     authProvider: {
       type: String,
     },

@@ -2,8 +2,7 @@ extends ../base/layout.pug
 
 block content
   main(role="main" class="girdle user-edit")
-    h2 User profile
-    p #{user.role}
+    h2 Your profile
 
     img(class="avatar" src=user.avatar)
 
@@ -23,5 +22,23 @@ block content
         div(class="field-group")
             label(for="display-name") Display Name
             input(type="text" id="display-name" name="displayName" value=user.displayName required)
+
+        if user.role === "business"
+
+            div(class="field-group")
+                label(for="business-name") Business Name
+                input(type="text" id="business-name" name="businessName" value=user.businessName required)
+
+            div(class="field-group")
+                label(for="business-name") Website
+                input(type="text" id="business-name" name="businessWebsite" value=user.businessWebsite)
+
+            div(class="field-group")
+                label(for="business-about") About
+                textarea(id="business-about" name="businessAbout") #{user.businessAbout}
+
+            div(class="field-group")
+                label(for="business-email") Email
+                input(type="text" id="business-email" name="businessEmail" value=user.businessEmail required)
 
         button(type="submit" class="cta") Save

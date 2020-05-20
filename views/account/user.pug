@@ -18,3 +18,22 @@ block content
         dt Email
         dd #{user.email}
 
+    if user.role === "business"
+      div(class="business-details")
+        h2 Business Information
+
+        dl
+        if user.businessName
+          dt Business name
+          dd #{user.businessName}
+        if user.businessWebsite
+          dt Business website
+          dd #{user.businessWebsite}
+        if user.businessAbout
+          dt About your business
+          dd #{user.businessAbout}
+        if user.businessEmail
+          dt Business email
+          dd #{user.businessEmail}
+
+
