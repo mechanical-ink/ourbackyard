@@ -130,7 +130,7 @@ fieldset {
     @media all and (min-width: 47.9385em) {
       .field-group input,
       .field-group textarea {
-        width: 70%; } }
+        width: 90%; } }
   .field-group .inline-label {
     display: inline-block; }
   .field-group input[type="checkbox"] {
@@ -361,25 +361,49 @@ footer {
       flex-wrap: wrap;
       justify-content: space-between; }
       .user-profile .user-profile-header {
-        flex-basis: 100%;
+        flex-basis: 50%;
         margin-bottom: 60px; }
       .user-profile .user-details {
-        flex-basis: 25%; }
-      .user-profile .business-details {
+        flex-basis: 25%;
+        align-self: center; }
+      .user-profile.business .user-profile-header {
+        flex-basis: 100%;
+        margin-bottom: 60px; }
+      .user-profile.business .user-details {
+        flex-basis: 45%;
+        align-self: inherit; }
+      .user-profile.business .business-details {
         flex-basis: 45%; } }
   @media all and (min-width: 74.9375em) {
     .user-profile {
-      justify-content: space-around; } }
+      justify-content: center; } }
   .user-profile .user-profile-header h2 {
     margin: 0 auto;
     max-width: 320px; }
 
-.user-edit.girdle {
-  text-align: left; }
-
-.user-edit .avatar,
-.user-edit .cta {
-  margin: 20px 0; }
+.user-edit {
+  text-align: center; }
+  @media all and (min-width: 47.9385em) {
+    .user-edit .user-details {
+      margin: 20px auto;
+      width: 500px; } }
+  @media all and (min-width: 63.9385em) {
+    .user-edit {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; }
+      .user-edit .user-profile-header {
+        flex-basis: 40%;
+        margin-bottom: 60px; }
+      .user-edit .user-details {
+        flex-basis: 50%;
+        align-self: center; } }
+  .user-edit form {
+    text-align: left; }
+  .user-edit button {
+    margin-top: 20px; }
+  .user-edit textarea {
+    height: 300px; }
 
 .hidden {
   display: none; }

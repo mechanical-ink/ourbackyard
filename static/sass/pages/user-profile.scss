@@ -9,21 +9,34 @@
     justify-content: space-between;
 
     .user-profile-header {
-      flex-basis: 100%;
+      flex-basis: 50%;
       margin-bottom: 60px;
     }
 
     .user-details {
       flex-basis: 25%;
+      align-self: center;
     }
 
-    .business-details {
-      flex-basis: 45%;
+    &.business {
+      .user-profile-header {
+        flex-basis: 100%;
+        margin-bottom: 60px;
+      }
+
+      .user-details {
+        flex-basis: 45%;
+        align-self: inherit;
+      }
+
+      .business-details {
+        flex-basis: 45%;
+      }
     }
   }
 
   @media #{$mq-large-desktop-and-up} {
-    justify-content: space-around;
+    justify-content: center;
   }
 
   .user-profile-header {

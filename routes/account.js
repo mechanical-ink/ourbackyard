@@ -20,8 +20,6 @@ router.get("/account/edit", secured(), (req, res, next) => {
 });
 
 router.post("/account/update", secured(), (req, res, next) => {
-  console.log(req.body);
-
   dbUtils
     .connect("ourbackyard")
     .then(async () => {
