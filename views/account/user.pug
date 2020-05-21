@@ -1,7 +1,8 @@
 extends ../base/layout.pug
 
 block content
-  main(role="main" class="girdle user-profile")
+  - let classNames = user.role === "business" ? "girdle user-profile business" : "girdle user-profile";
+  main(role="main" class=classNames)
     header(class="user-profile-header")
       img(class="avatar" src=user.avatar)
 
@@ -21,6 +22,9 @@ block content
     if user.role === "business"
       div(class="business-details")
         h2 Business Information
+
+        unless user.businessName
+          p Complete your #[a(href="edit") business profile details].
 
         dl
         if user.businessName

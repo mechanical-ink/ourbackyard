@@ -1,10 +1,38 @@
 .user-edit {
-  &.girdle {
+  text-align: center;
+
+  @media #{$mq-tablet-and-up} {
+    .user-details {
+      margin: 20px auto;
+      width: 500px;
+    }
+  }
+
+  @media #{$mq-small-desktop-and-up} {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .user-profile-header {
+      flex-basis: 40%;
+      margin-bottom: 60px;
+    }
+
+    .user-details {
+      flex-basis: 50%;
+      align-self: center;
+    }
+  }
+
+  form {
     text-align: left;
   }
 
-  .avatar,
-  .cta {
-    margin: 20px 0;
+  button {
+    margin-top: 20px;
+  }
+
+  textarea {
+    height: 300px;
   }
 }
