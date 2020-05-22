@@ -18,13 +18,16 @@
 
 @import "./components/user-details";
 
+@import "./components/newsletter";
+
 @import "./components/policy";
 @import "./components/status";
 @import "./components/footer";
 
 @import "./pages/signup";
 @import "./pages/what-we-do";
+@import "./pages/thank-you";
 @import "./pages/user-profile.scss";
-@import "./pages/user-edit.scss";
+@import "./pages/user-edit";
 
 @import "./utils/common";

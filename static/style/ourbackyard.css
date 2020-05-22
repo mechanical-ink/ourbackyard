@@ -143,6 +143,7 @@ a.cta {
   color: #fff;
   padding: 10px 40px;
   border: 0;
+  height: 55px;
   text-decoration: none;
   cursor: pointer; }
   .cta:hover, .cta:focus, .cta:active,
@@ -245,6 +246,35 @@ a.cta {
     margin-top: 20px;
     font-weight: bold; }
 
+.newsletter {
+  background-color: #f4f5f7;
+  margin-top: 50px;
+  padding: 40px 20px;
+  text-align: center; }
+  .newsletter .girdle {
+    max-width: 700px; }
+  .newsletter h3 {
+    margin: 0 0 20px; }
+  @media all and (min-width: 47.9385em) {
+    .newsletter form {
+      display: flex;
+      margin-top: 20px; } }
+  .newsletter .field-group {
+    margin: 20px 0;
+    padding: 0; }
+    @media all and (min-width: 47.9385em) {
+      .newsletter .field-group {
+        flex-basis: 60%;
+        margin: 0; } }
+  .newsletter button {
+    width: 100%; }
+    @media all and (min-width: 47.9385em) {
+      .newsletter button {
+        flex-basis: 40%; } }
+  .newsletter .nobotz {
+    position: absolute;
+    left: -5000px; }
+
 .policy {
   text-align: left; }
 
@@ -276,7 +306,6 @@ a.cta {
   max-width: 420px; }
 
 footer {
-  margin-top: 100px;
   text-align: center; }
   footer a:link,
   footer a:visited {
@@ -352,6 +381,29 @@ footer {
         font-size: 2.5rem; } }
   .what-we-do p {
     font-size: 1.3rem; }
+
+.thank-you-page {
+  margin: 0 auto 60px;
+  max-width: 650px;
+  text-align: center; }
+  .thank-you-page::before {
+    display: block;
+    content: "";
+    background: transparent url("../media/illustrations/thank-you.svg") 0 0 no-repeat;
+    background-size: 250px;
+    margin: 0 auto;
+    width: 250px;
+    height: 250px; }
+    @media all and (min-width: 47.9385em) {
+      .thank-you-page::before {
+        background-size: 350px;
+        width: 350px;
+        height: 350px; } }
+    @media all and (min-width: 63.9385em) {
+      .thank-you-page::before {
+        background-size: 400px;
+        width: 400px;
+        height: 400px; } }
 
 .user-profile {
   text-align: center; }
