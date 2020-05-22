@@ -9,3 +9,8 @@ Connecting people with local businesses
 ## Development Resources
 
 - [Structured data](https://developers.google.com/search/reference/overview)
+
+## Infra
+
+- [Database](https://cloud.mongodb.com/)
+- [Auth](https://auth0.com)
