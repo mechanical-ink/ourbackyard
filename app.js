@@ -7,7 +7,6 @@ const passport = require("passport");
 const Auth0Strategy = require("passport-auth0");
 
 const Rollbar = require("rollbar");
-const rollbar = new Rollbar("e752d9d0d9b0426a83a74b354d100be8");
 
 const { SitemapStream, streamToPromise } = require("sitemap");
 const { createGzip } = require("zlib");
@@ -23,6 +22,12 @@ const app = express();
 const port = 3000;
 
 require("dotenv").config();
+
+const rollbar = new Rollbar({
+  accessToken: process.env.ROLLBAR_ACCESS_TOKEN,
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+});
 
 app.set("view engine", "pug");
 

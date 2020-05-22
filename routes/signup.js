@@ -1,6 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
+require("dotenv").config();
+
+const slack = require("slack-notify")(process.env.SLACK_WEBHOOK);
+
 const UserAPI = require("../models/user-api");
 
 router.get("/signup/select-account-type", async (req, res) => {
@@ -15,6 +19,13 @@ router.post("/signup/select-account-type", async (req, res, next) => {
     if (err) {
       return next(err);
     }
+
+    const slackMsg = `New user registration: ${dbUser.email} using ${dbUser.authProvider}`;
+    slack.success(slackMsg, (error) => {
+      if (error) {
+        console.error(`==== Slack Notify Error: ${error.toString()} ====`);
+      }
+    });
 
     res.redirect("/");
   });
