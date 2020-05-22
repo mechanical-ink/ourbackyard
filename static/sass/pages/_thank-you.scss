@@ -1,0 +1,28 @@
+.thank-you-page {
+  margin: 0 auto 60px;
+  max-width: 650px;
+  text-align: center;
+
+  &::before {
+    display: block;
+    content: "";
+    background: transparent url("../media/illustrations/thank-you.svg") 0 0
+      no-repeat;
+    background-size: 250px;
+    margin: 0 auto;
+    width: 250px;
+    height: 250px;
+
+    @media #{$mq-tablet-and-up} {
+      background-size: 350px;
+      width: 350px;
+      height: 350px;
+    }
+
+    @media #{$mq-small-desktop-and-up} {
+      background-size: 400px;
+      width: 400px;
+      height: 400px;
+    }
+  }
+}
