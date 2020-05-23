@@ -1,5 +1,9 @@
 .site-header {
-  padding: 40px 0 80px;
+  padding: 40px 0 20px;
+
+  @media #{$mq-tablet-and-up} {
+    padding: 40px 0 80px;
+  }
 
   @media #{$mq-tablet-and-up} {
     @supports (display: flex) {
