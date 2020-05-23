@@ -6,12 +6,13 @@ const User = require("./user");
  * @param {String} role - The user's selected or assigned role
  */
 const addUser = (user, role) => {
+  console.log(user);
   return User.create({
     userID: user.user_id,
     avatar: user.picture,
-    firstName: user.name.givenName,
-    familyName: user.name.familyName,
-    displayName: user.displayName,
+    firstName: user._json.name || user.name.givenName,
+    familyName: user.name.familyName || "",
+    displayName: user.nickname || user.displayName,
     email: user._json.email,
     emailVerified: user._json.email_verified,
     authProvider: user.provider,
