@@ -167,7 +167,10 @@ a.cta {
   height: 200px; }
 
 .site-header {
-  padding: 40px 0 80px; }
+  padding: 40px 0 20px; }
+  @media all and (min-width: 47.9385em) {
+    .site-header {
+      padding: 40px 0 80px; } }
   @media all and (min-width: 47.9385em) {
     @supports (display: flex) {
       .site-header {
