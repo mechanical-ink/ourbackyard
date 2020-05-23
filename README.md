@@ -14,3 +14,4 @@ Connecting people with local businesses
 
 - [Database](https://cloud.mongodb.com/)
 - [Auth](https://auth0.com)
+- [Server IP] `165.22.20.27`
