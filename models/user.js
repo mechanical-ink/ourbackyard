@@ -39,7 +39,19 @@ const UserSchema = new mongoose.Schema(
     businessAbout: {
       type: String,
     },
-    businessAddress: {
+    businessStreetAddress: {
+      type: String,
+    },
+    businessSuburb: {
+      type: String,
+    },
+    businessCity: {
+      type: String,
+    },
+    businessProvince: {
+      type: String,
+    },
+    businessPostalCode: {
       type: String,
     },
     businessEmail: {

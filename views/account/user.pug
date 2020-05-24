@@ -30,12 +30,27 @@ block content
         if user.businessName
           dt Business name
           dd #{user.businessName}
-        if user.businessWebsite
-          dt Business website
-          dd #{user.businessWebsite}
         if user.businessAbout
           dt About your business
           dd #{user.businessAbout}
+        if user.businessStreetAddress
+          dt Street address
+          dd #{user.businessStreetAddress}
+        if user.businessSuburb
+          dt Suburb
+          dd #{user.businessSuburb}
+        if user.businessCity
+          dt City
+          dd #{user.businessCity}
+        if user.businessProvince
+          dt Province
+          dd #{user.businessProvince}
+        if user.businessPostalCode
+          dt Postal code
+          dd #{user.businessPostalCode}
+        if user.businessWebsite
+          dt Business website
+          dd #{user.businessWebsite}
         if user.businessEmail
           dt Business email
           dd #{user.businessEmail}

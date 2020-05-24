@@ -26,21 +26,47 @@ block content
                 input(type="text" id="display-name" name="displayName" value=user.displayName required)
 
             if user.role === "business"
+                fieldset
+                    legend General business information
+                    div(class="field-group")
+                        label(for="business-name") Business Name
+                        input(type="text" id="business-name" name="businessName" value=user.businessName required)
 
-                div(class="field-group")
-                    label(for="business-name") Business Name
-                    input(type="text" id="business-name" name="businessName" value=user.businessName required)
+                    div(class="field-group")
+                        label(for="business-about") About
+                        textarea(id="business-about" name="businessAbout") #{user.businessAbout}
 
-                div(class="field-group")
-                    label(for="business-name") Website
-                    input(type="text" id="business-name" name="businessWebsite" value=user.businessWebsite)
+                fieldset
+                    legend Business address
+                    div(class="field-group")
+                        label(for="business-address") Street address
+                        input(type="text" id="business-address" name="businessStreetAddress" value=user.businessStreetAddress)
 
-                div(class="field-group")
-                    label(for="business-about") About
-                    textarea(id="business-about" name="businessAbout") #{user.businessAbout}
+                    div(class="field-group")
+                        label(for="business-suburb") Suburb
+                        input(type="text" id="business-suburb" name="businessSuburb" value=user.businessSuburb)
 
-                div(class="field-group")
-                    label(for="business-email") Email
-                    input(type="text" id="business-email" name="businessEmail" value=user.businessEmail required)
+                    div(class="field-group")
+                        label(for="business-city") City
+                        input(type="text" id="business-city" name="businessCity" value=user.businessCity)
+
+                    div(class="field-group")
+                        label(for="business-province") Province
+                        input(type="text" id="business-province" name="businessProvince" value=user.businessProvince)
+
+                    div(class="field-group")
+                        label(for="business-postalcode") Postal code
+                        input(type="number" id="business-postalcode" name="businessPostalCode" value=user.businessPostalCode)
+
+                fieldset
+                    legend Business contact information
+                    div(class="field-group")
+                        label(for="business-name") Website
+                        input(type="url" pattern="http[s]?://.*" id="business-name" name="businessWebsite" value=user.businessWebsite)
+
+
+                    div(class="field-group")
+                        label(for="business-email") Email
+                        input(type="email" id="business-email" name="businessEmail" value=user.businessEmail required)
 
             button(type="submit" class="cta") Save
