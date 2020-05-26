@@ -25,6 +25,11 @@ block content
                 label(for="display-name") Display Name
                 input(type="text" id="display-name" name="displayName" value=user.displayName required)
 
+            div(class="field-group")
+                label(for="area-filter") Postal Code
+                input(type="text" id="area-filter" name="areaFilter" value=user.areaFilter)
+                p The information above will be used to filter search results to the postal code specified.
+
             if user.role === "business"
                 fieldset
                     legend General business information
