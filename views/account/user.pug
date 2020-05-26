@@ -18,6 +18,9 @@ block content
         dd #{user.displayName}
         dt Email
         dd #{user.email}
+      if user.areaFilter
+        dt Postal Code
+        dd #{user.areaFilter}
 
     if user.role === "business"
       div(class="business-details")

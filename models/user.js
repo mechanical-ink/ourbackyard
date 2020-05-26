@@ -21,6 +21,9 @@ const UserSchema = new mongoose.Schema(
     familyName: {
       type: String,
     },
+    areaFilter: {
+      type: String,
+    },
     email: {
       type: String,
       required: true,
