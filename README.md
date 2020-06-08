@@ -18,7 +18,7 @@ Connecting people with local businesses
 
 ## Queries
 
-### Find All individuals and business that have the same zipcode
+### Find all individuals and businesses that have the same zipcode
 
 ```
 {$or: [{"areaFilter": "0182"}, {"businessPostalCode": "0182"}] }
