@@ -9,6 +9,7 @@ Connecting people with local businesses
 ## Development Resources
 
 - [Structured data](https://developers.google.com/search/reference/overview)
+- [Query Documents - MongoDB](https://docs.mongodb.com/manual/tutorial/query-documents/)
 
 ## Infra
 
