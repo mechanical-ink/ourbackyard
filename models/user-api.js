@@ -14,8 +14,36 @@ const addUser = (user, role) => {
     displayName: user.nickname || user.displayName,
     email: user._json.email,
     emailVerified: user._json.email_verified,
+    areaFilter: user.areaFilter,
     authProvider: user.provider,
     role,
+  });
+};
+
+/**
+ * Creates a new business user in the database
+ * @param {Object} user - User data received from Auth0
+ */
+const addBusinessUser = (user) => {
+  return User.create({
+    userID: user.userID,
+    avatar: user.avatar,
+    displayName: user.displayName,
+    firstName: user.firstName,
+    familyName: user.familyName,
+    email: user.email,
+    emailVerified: user.emailVerified,
+    businessName: user.businessName,
+    businessWebsite: user.businessWebsite,
+    businessAbout: user.businessAbout,
+    businessStreetAddress: user.businessStreetAddress,
+    businessSuburb: user.businessSuburb,
+    businessCity: user.businessCity,
+    businessProvince: user.businessProvince,
+    businessPostalCode: user.businessPostalCode,
+    businessEmail: user.businessEmail,
+    authProvider: user.provider,
+    role: user.role,
   });
 };
 
@@ -41,6 +69,7 @@ const findUserByUserID = (userID) => {
 
 module.exports = {
   addUser,
+  addBusinessUser,
   updateUser,
   findUserByUserID,
 };

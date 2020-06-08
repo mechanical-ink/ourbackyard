@@ -21,9 +21,6 @@ const UserSchema = new mongoose.Schema(
     familyName: {
       type: String,
     },
-    areaFilter: {
-      type: String,
-    },
     email: {
       type: String,
       required: true,
@@ -58,6 +55,9 @@ const UserSchema = new mongoose.Schema(
       type: String,
     },
     businessEmail: {
+      type: String,
+    },
+    areaFilter: {
       type: String,
     },
     authProvider: {
