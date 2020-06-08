@@ -15,3 +15,11 @@ Connecting people with local businesses
 - [Database](https://cloud.mongodb.com/)
 - [Auth](https://auth0.com)
 - [Server IP] `165.22.20.27`
+
+## Queries
+
+### Find All individuals and business that have the same zipcode
+
+```
+{$or: [{"areaFilter": "0182"}, {"businessPostalCode": "0182"}] }
+```
