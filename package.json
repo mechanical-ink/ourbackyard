@@ -24,7 +24,6 @@
   "author": "Schalk Neethling",
   "license": "MIT",
   "devDependencies": {
-    "cz-conventional-changelog": "3.2.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-standard": "^14.1.1",
@@ -32,7 +31,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "husky": "^4.2.5",
+    "faker": "^4.1.0",
     "node-sass-chokidar": "^1.4.0",
     "nodemon": "2.0.4",
     "npm-run-all": "^4.1.5",
@@ -55,15 +54,5 @@
     "rollbar": "^2.16.2",
     "sitemap": "^6.1.5",
     "slack-notify": "^0.1.7"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
-    }
   }
 }
