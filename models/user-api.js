@@ -59,6 +59,16 @@ const updateUser = (userDetail) => {
 };
 
 /**
+ * Get all users with the specified role
+ * @param {String} role - the user role
+ * @param {Object} [excludes] - record fields to exclude [default: null]
+ * @returns All users with the specified role
+ */
+const findUsersByRole = (role, excludes = null) => {
+  return User.find({ role: role }, excludes).exec();
+};
+
+/**
  * Find user by user_id field
  * This is the ID returned by Auth0
  * @param {String} userID - The user id
@@ -71,5 +81,6 @@ module.exports = {
   addUser,
   addBusinessUser,
   updateUser,
+  findUsersByRole,
   findUserByUserID,
 };
