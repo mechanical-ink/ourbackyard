@@ -53,7 +53,7 @@
     "passport-auth0": "^1.4.0",
     "pug": "3.0.0",
     "rollbar": "^2.21.0",
-    "sitemap": "^6.3.3",
+    "sitemap": "^6.4.0",
     "slack-notify": "^0.1.7"
   }
 }
