@@ -39,7 +39,7 @@
     "sass": "^1.32.8"
   },
   "dependencies": {
-    "algoliasearch": "^4.3.0",
+    "algoliasearch": "^4.8.6",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "dotenv": "8.2.0",
@@ -52,7 +52,7 @@
     "passport": "^0.4.1",
     "passport-auth0": "^1.4.0",
     "pug": "3.0.2",
-    "rollbar": "^2.21.0",
+    "rollbar": "^2.21.1",
     "sitemap": "^6.4.0",
     "slack-notify": "^0.1.7"
   }
