@@ -20,31 +20,6 @@ block meta_data
 
 block content
   main
-    section(class="what-we-do")
+    section(class="search-results")
       header
-        h2(class="lead") Welcome to Ourbackyard. Thank you for stopping by.
-
-      form(name="search" action="/search" method="get")
-        div(class="form-field-group")
-          label(class="visually-hidden" for="postalcode") Postal code
-          input(type="text" name="postalcode" is="postalcode")
-
-        div(class="form-field-group")
-          label(class="visually-hidden" for="industry") Industry
-          input(type="text" name="industry" is="industry")
-
-        div(class="form-field-group")
-          label(class="visually-hidden" for="query") What are you looking for?
-          input(type="search" name="query" is="query" placeholder="What are you looking for?")
-
-        button(type="submit" class="button cta") Search
-
-      a(id="sign-up" class="cta main-cta" href="login") Sign Up
-
-block newsletter
-  include includes/newsletter.pug
-
-block ld_json
-  <script type="application/ld+json">
-    include structured-data/home.json
-  </script>
+        h2(class="lead") Search results

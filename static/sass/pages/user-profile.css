@@ -1,0 +1,40 @@
+.user-profile {
+  text-align: center;
+}
+@media all and (min-width: 63.9385em) {
+  .user-profile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .user-profile .user-profile-header {
+    flex-basis: 50%;
+    margin-bottom: 60px;
+  }
+  .user-profile .user-details {
+    flex-basis: 25%;
+    align-self: center;
+  }
+  .user-profile.business .user-profile-header {
+    flex-basis: 100%;
+    margin-bottom: 60px;
+  }
+  .user-profile.business .user-details {
+    flex-basis: 45%;
+    align-self: inherit;
+  }
+  .user-profile.business .business-details {
+    flex-basis: 45%;
+  }
+}
+@media all and (min-width: 74.9375em) {
+  .user-profile {
+    justify-content: center;
+  }
+}
+.user-profile .user-profile-header h2 {
+  margin: 0 auto;
+  max-width: 320px;
+}
+
+/*# sourceMappingURL=user-profile.css.map */
