@@ -21,7 +21,6 @@ brew services start|stop|restart mongodb-community
 
 - [Database](https://cloud.mongodb.com/)
 - [Auth](https://auth0.com)
-- [Algolia](https://www.algolia.com/apps/FN8A6I8RPI/dashboard)
 - [Server IP] `165.22.20.27`
 
 ## Queries

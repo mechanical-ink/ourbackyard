@@ -24,21 +24,25 @@
   "author": "Schalk Neethling",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^7.23.0",
-    "eslint-config-prettier": "^8.1.0",
+    "eslint": "^7.24.0",
+    "eslint-config-prettier": "^8.2.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-standard": "^5.0.0",
+<<<<<<< HEAD
     "faker": "^5.5.2",
+=======
+    "faker": "^5.5.3",
+    "node-sass-chokidar": "^1.5.0",
+>>>>>>> main
     "nodemon": "2.0.7",
     "npm-run-all": "^4.1.5",
     "parcel-bundler": "1.12.5",
     "sass": "^1.32.8"
   },
   "dependencies": {
-    "algoliasearch": "^4.8.6",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "dotenv": "8.2.0",
@@ -47,7 +51,7 @@
     "express-validator": "^6.10.0",
     "helmet": "^4.2.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.12.3",
+    "mongoose": "^5.12.4",
     "nodemailer": "6.5.0",
     "passport": "^0.4.1",
     "passport-auth0": "^1.4.0",
