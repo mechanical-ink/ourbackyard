@@ -20,7 +20,6 @@ router.get("/search", (req, res) => {
         };
 
         const searchResults = await findUsersBySearchParams(searchParams);
-        console.log(searchResults);
 
         res.render("search-results", { searchResults });
       } catch (error) {
