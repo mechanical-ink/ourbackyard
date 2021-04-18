@@ -77,7 +77,14 @@ const findUsersByRole = (role, excludes = null) => {
 const findUsersBySearchParams = (searchParams) => {
   return User.find({
     $and: [
-      { businessPostalCode: searchParams.businessPostalCode },
+      {
+        $or: [
+          {
+            businessPostalCode: searchParams.businessPostalCode,
+          },
+          { areaFilter: searchParams.businessPostalCode },
+        ],
+      },
       {
         businessAbout: { $regex: searchParams.businessAbout, $options: "gim" },
       },
