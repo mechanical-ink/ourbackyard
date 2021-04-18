@@ -11,6 +11,12 @@ Connecting people with local businesses
 - [Structured data](https://developers.google.com/search/reference/overview)
 - [Query Documents - MongoDB](https://docs.mongodb.com/manual/tutorial/query-documents/)
 
+Start local MongoDB
+
+```
+brew services start|stop|restart mongodb-community
+```
+
 ## Infra
 
 - [Database](https://cloud.mongodb.com/)
@@ -24,3 +30,5 @@ Connecting people with local businesses
 ```
 {$or: [{"areaFilter": "0182"}, {"businessPostalCode": "0182"}] }
 ```
+
+- https://docs.mongodb.com/manual/reference/operator/query/regex/

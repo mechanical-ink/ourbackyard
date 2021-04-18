@@ -1,8 +1,8 @@
 .site-header {
-  padding: 40px 0 20px;
+  padding: ($base-spacing * 2) 0 $base-spacing;
 
   @media #{$mq-tablet-and-up} {
-    padding: 40px 0 80px;
+    padding: ($base-spacing * 2) 0;
   }
 
   @media #{$mq-tablet-and-up} {

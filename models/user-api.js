@@ -69,6 +69,23 @@ const findUsersByRole = (role, excludes = null) => {
 };
 
 /**
+ * Searches the database of business users based on search params
+ * and returns a Promise
+ * @param {Object} searchParams - the search parameters to use for the `find`
+ * @returns `Promise` that will resolve with search results
+ */
+const findUsersBySearchParams = (searchParams) => {
+  return User.find({
+    $and: [
+      { businessPostalCode: searchParams.businessPostalCode },
+      {
+        businessAbout: { $regex: searchParams.businessAbout, $options: "gim" },
+      },
+    ],
+  }).exec();
+};
+
+/**
  * Find user by user_id field
  * This is the ID returned by Auth0
  * @param {String} userID - The user id
@@ -82,5 +99,6 @@ module.exports = {
   addBusinessUser,
   updateUser,
   findUsersByRole,
+  findUsersBySearchParams,
   findUserByUserID,
 };

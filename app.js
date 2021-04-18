@@ -1,4 +1,5 @@
 const express = require("express");
+const helmet = require("helmet");
 const path = require("path");
 
 const session = require("express-session");
@@ -16,10 +17,18 @@ const adminRouter = require("./routes/admin");
 const authRouter = require("./routes/auth");
 const signupRouter = require("./routes/signup");
 const accountRouter = require("./routes/account");
+const searchRouter = require("./routes/search");
 const routes = require("./routes/router");
 
+// file deepcode ignore UseCsurfForExpress: Not using CSRF tokens currently
 const app = express();
 const port = 3000;
+
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
 
 require("dotenv").config();
 
@@ -119,6 +128,7 @@ app.use("/", adminRouter);
 app.use("/", authRouter);
 app.use("/", signupRouter);
 app.use("/", accountRouter);
+app.use("/", searchRouter);
 app.use("/", routes);
 
 app.use(rollbar.errorHandler());

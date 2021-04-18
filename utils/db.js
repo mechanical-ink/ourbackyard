@@ -6,7 +6,7 @@ require("dotenv").config();
  * Utils for working with MongoDB
  */
 const dbUtils = {
-  connect: dbName => {
+  connect: (dbName) => {
     const DBHOST = process.env.DB_HOST;
     const DBPROTOCOL = process.env.DB_PROROCOL;
     const USERNAME = process.env.DB_USER;
@@ -23,9 +23,9 @@ const dbUtils = {
     return mongoose.connect(mongoURI, {
       useCreateIndex: true,
       useNewUrlParser: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
     });
-  }
+  },
 };
 
 module.exports = dbUtils;

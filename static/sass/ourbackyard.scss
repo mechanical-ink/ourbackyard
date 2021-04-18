@@ -2,6 +2,7 @@
 
 @import "./vars/media-queries";
 @import "./vars/color-palette";
+@import "./vars/layout";
 
 @import "./atoms/typography";
 @import "./atoms/base";
@@ -22,6 +23,7 @@
 
 @import "./components/policy";
 @import "./components/status";
+@import "./components/search-form";
 @import "./components/footer";
 
 @import "./pages/signup";
@@ -29,5 +31,6 @@
 @import "./pages/thank-you";
 @import "./pages/user-profile.scss";
 @import "./pages/user-edit";
+@import "./pages/search-results";
 
 @import "./utils/common";
