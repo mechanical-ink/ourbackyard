@@ -20,8 +20,6 @@ const dbUtils = {
       mongoURI = `${DBPROTOCOL}://${DBHOST}/${dbName}?retryWrites=true&w=majority`;
     }
 
-    console.log(mongoURI);
-
     return mongoose.connect(mongoURI, {
       useCreateIndex: true,
       useNewUrlParser: true,

@@ -22,23 +22,22 @@ block content
   main
     section(class="what-we-do")
       header
-        h2(class="lead") Welcome to Ourbackyard. Thank you for stopping by.
+        h2(class="lead") Find local. Support local.
+        p Enter your postal code, the service, or product you need, and press search. Find and support local businesses.
 
-      form(name="search" action="/search" method="get")
-        div(class="form-field-group")
-          label(class="visually-hidden" for="postalcode") Postal code
-          input(type="text" name="postalcode" is="postalcode")
+      form(name="search" class="main-search" action="/search" method="get")
+        div(class="field-group")
+          label(for="postalcode") Postal code
+          input(type="text" class="postalcode" name="postalcode" id="postalcode" placeholder="postal code")
 
-        div(class="form-field-group")
-          label(class="visually-hidden" for="industry") Industry
-          input(type="text" name="industry" is="industry")
-
-        div(class="form-field-group")
-          label(class="visually-hidden" for="query") What are you looking for?
-          input(type="search" name="query" is="query" placeholder="What are you looking for?")
+        div(class="field-group")
+          label(for="query") Service or product
+          input(type="search" class="service-query" name="query" id="query" placeholder="Service your require")
 
         button(type="submit" class="button cta") Search
 
+      h3(class="lead") Welcome to Ourbackyard. Thank you for stopping by.
+      p Do you own a local business? Sign up for free today and advertise your services to your local community.
       a(id="sign-up" class="cta main-cta" href="login") Sign Up
 
 block newsletter

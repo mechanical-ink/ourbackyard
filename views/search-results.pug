@@ -20,6 +20,19 @@ block meta_data
 
 block content
   main
-    section(class="search-results")
-      header
-        h2(class="lead") Search results
+    h1 Search results
+    p(class="back-to-search")
+      a(href="/") &lsaquo; back to search
+
+    if searchResults.length > 0
+      ul
+        each result in searchResults
+          li
+            h2= result.businessName
+            p= result.businessAbout
+            p
+              a(href=`mailto:${result.businessEmail}`)= result.businessEmail
+    else
+      h2 No search results for query
+        
+

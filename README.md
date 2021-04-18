@@ -30,3 +30,5 @@ brew services start|stop|restart mongodb-community
 ```
 {$or: [{"areaFilter": "0182"}, {"businessPostalCode": "0182"}] }
 ```
+
+- https://docs.mongodb.com/manual/reference/operator/query/regex/

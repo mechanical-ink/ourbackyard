@@ -24,7 +24,11 @@ const routes = require("./routes/router");
 const app = express();
 const port = 3000;
 
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
 
 require("dotenv").config();
 
