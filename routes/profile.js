@@ -5,25 +5,20 @@ const Rollbar = require("rollbar");
 const rollbar = new Rollbar("e752d9d0d9b0426a83a74b354d100be8");
 
 const dbUtils = require("../utils/db");
-const { findUsersBySearchParams } = require("../models/user-api");
+const { findUserByUserID } = require("../models/user-api");
 
-router.get("/search", (req, res) => {
+router.get("/profile/:userID", (req, res) => {
   dbUtils
     .connect("ourbackyard")
     .then(async () => {
       try {
-        const searchParams = {
-          businessPostalCode: req.query.postalcode,
-          businessAbout: req.query.query,
-          role: "business",
-        };
-
-        const searchResults = await findUsersBySearchParams(searchParams);
-
-        res.render("search-results", { searchResults });
+        const user = await findUserByUserID(req.params.userID);
+        res.render("profile/index", { user });
       } catch (error) {
         rollbar.error(error, req);
-        console.error(`Error while searching database: ${error.toString()}`);
+        console.error(
+          `Error while getting user details from database: ${error.toString()}`
+        );
       }
     })
     .catch((error) => {
