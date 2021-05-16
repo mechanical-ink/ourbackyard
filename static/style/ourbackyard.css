@@ -106,6 +106,13 @@ main p {
   margin: 20px 0;
 }
 
+a:link, a:visited {
+  color: #7548a8;
+}
+a:hover, a:focus {
+  text-decoration: none;
+}
+
 .wrapper {
   margin: 0 auto;
   min-height: 76vh;
@@ -411,7 +418,7 @@ a.cta:active {
 }
 @media all and (min-width: 47.9385em) {
   .main-search .field-group {
-    flex: 1 1 max-content;
+    flex: 1 1;
     margin-bottom: 0;
   }
 }
@@ -422,11 +429,6 @@ a.cta:active {
   .main-search .cta {
     flex: 0 1;
     width: max-content;
-  }
-}
-@media all and (min-width: 47.9385em) {
-  .main-search .postalcode {
-    width: 120px;
   }
 }
 @media all and (min-width: 63.9385em) {
@@ -644,6 +646,41 @@ footer .legal li {
 
 .back-to-search {
   margin-top: 0;
+}
+
+.public-user-profile {
+  padding: 0 20px;
+  text-align: left;
+}
+@media all and (min-width: 63.9385em) {
+  .public-user-profile {
+    margin: 0 0 60px;
+  }
+}
+.public-user-profile .avatar {
+  margin: 20px 0;
+}
+.public-user-profile ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+.public-user-profile li {
+  margin-bottom: 10px;
+}
+.public-user-profile .icon::before {
+  background-size: 21px;
+  content: "";
+  display: inline-block;
+  height: 21px;
+  margin-right: 10px;
+  vertical-align: sub;
+  width: 21px;
+}
+.public-user-profile .email-address::before {
+  background: transparent url("/static/media/icons/email-address.svg") center center no-repeat;
+}
+.public-user-profile .website::before {
+  background: transparent url("/static/media/icons/globe.svg") center center no-repeat;
 }
 
 .hidden {

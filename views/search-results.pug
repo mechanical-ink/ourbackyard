@@ -28,10 +28,10 @@ block content
       ul
         each result in searchResults
           li
-            h2= result.businessName
+            h2 
+              a(href=`/profile/${result.userID}`)= result.businessName
             p= result.businessAbout
-            p
-              a(href=`mailto:${result.businessEmail}`)= result.businessEmail
+
     else
       h2 No search results for query
         

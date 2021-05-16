@@ -28,11 +28,13 @@ block content
       form(name="search" class="main-search" action="/search" method="get")
         div(class="field-group")
           label(for="postalcode") Postal code
-          input(type="text" class="postalcode" name="postalcode" id="postalcode" placeholder="postal code")
+          input(type="text" class="postalcode" name="postalcode" id="postalcode" placeholder="postal code"
+          required)
 
         div(class="field-group")
           label(for="query") Service or product
-          input(type="search" class="service-query" name="query" id="query" placeholder="Service your require")
+          input(type="text" class="service-query" name="query" id="query" placeholder="Service your require"
+          required)
 
         button(type="submit" class="button cta") Search
 

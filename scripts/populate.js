@@ -16,7 +16,7 @@ function getRandomInt(min, max) {
 
 function getFakeIndividualUser() {
   return {
-    user_id: faker.random.uuid(),
+    user_id: faker.datatype.uuid(),
     picture: faker.image.imageUrl(),
     _json: {
       name: faker.name.firstName(),
@@ -34,8 +34,8 @@ function getFakeIndividualUser() {
 
 function getFakeBusinessUser() {
   return {
-    userID: faker.random.uuid(),
-    avatar: faker.image.imageUrl(),
+    userID: faker.datatype.uuid(),
+    avatar: "https://placekitten.com/g/300/300",
     displayName: faker.company.companyName(),
     firstName: faker.name.firstName(),
     familyName: faker.name.lastName(),

@@ -1,0 +1,47 @@
+.public-user-profile {
+  padding: 0 20px;
+  text-align: left;
+
+  @media #{$mq-small-desktop-and-up} {
+    margin: 0 0 60px;
+  }
+
+  .avatar {
+    margin: 20px 0;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  .icon {
+    &::before {
+      background-size: 21px;
+      content: "";
+      display: inline-block;
+      height: 21px;
+      margin-right: 10px;
+      vertical-align: sub;
+      width: 21px;
+    }
+  }
+
+  .email-address {
+    &::before {
+      background: transparent url("/static/media/icons/email-address.svg")
+        center center no-repeat;
+    }
+  }
+
+  .website {
+    &::before {
+      background: transparent url("/static/media/icons/globe.svg") center center
+        no-repeat;
+    }
+  }
+}
