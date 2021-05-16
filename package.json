@@ -25,7 +25,7 @@
   "license": "MIT",
   "devDependencies": {
     "eslint": "^7.24.0",
-    "eslint-config-prettier": "^8.2.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
@@ -51,7 +51,7 @@
     "passport-auth0": "^1.4.0",
     "pug": "3.0.2",
     "rollbar": "^2.21.1",
-    "sitemap": "^6.4.0",
+    "sitemap": "^7.0.0",
     "slack-notify": "^0.1.7"
   }
 }
