@@ -17,6 +17,31 @@ Start local MongoDB
 brew services start|stop|restart mongodb-community
 ```
 
+## Auth0 Signup
+
+```json
+{
+  displayName: 'volume4.schalk@gmail.com',
+  id: 'auth0|5ec917be368bc60c0af0f6dd',
+  user_id: 'auth0|5ec917be368bc60c0af0f6dd',
+  provider: 'auth0',
+  name: {},
+  emails: [ { value: 'volume4.schalk@gmail.com' } ],
+  picture: 'https://s.gravatar.com/avatar/44391f94143d129bdfdcd8b52aa51674?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fvo.png',
+  nickname: 'volume4.schalk',
+  _json: {
+    sub: 'auth0|5ec917be368bc60c0af0f6dd',
+    nickname: 'volume4.schalk',
+    name: 'volume4.schalk@gmail.com',
+    picture: 'https://s.gravatar.com/avatar/44391f94143d129bdfdcd8b52aa51674?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fvo.png',
+    updated_at: '2020-05-23T12:31:58.971Z',
+    email: 'volume4.schalk@gmail.com',
+    email_verified: false
+  },
+  _raw: '{"sub":"auth0|5ec917be368bc60c0af0f6dd","nickname":"volume4.schalk","name":"volume4.schalk@gmail.com","picture":"https://s.gravatar.com/avatar/44391f94143d129bdfdcd8b52aa51674?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fvo.png","updated_at":"2020-05-23T12:31:58.971Z","email":"volume4.schalk@gmail.com","email_verified":false}'
+}
+```
+
 ## Infra
 
 - [Database](https://cloud.mongodb.com/)
