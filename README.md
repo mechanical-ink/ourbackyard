@@ -19,7 +19,7 @@ brew services start|stop|restart mongodb-community
 
 ## Auth0 Signup
 
-```json
+```javascript
 {
   displayName: 'volume4.schalk@gmail.com',
   id: 'auth0|5ec917be368bc60c0af0f6dd',
