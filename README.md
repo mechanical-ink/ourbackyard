@@ -32,3 +32,10 @@ brew services start|stop|restart mongodb-community
 ```
 
 - https://docs.mongodb.com/manual/reference/operator/query/regex/
+
+## Useful links
+
+* https://indiehackers.com/
+* https://getmakerlog.com/
+* https://stackingthebricks.com/
+* Create radius maps https://radiusmap.traveltimeplatform.com/
