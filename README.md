@@ -1,10 +1,16 @@
 # ourbackyard
 
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 
 Connecting people with local businesses
+
+## Social Media
+
+- [Twitter](https://twitter.com/Ourbackyard1)
+- [Facebook](https://www.facebook.com/ourbackyard.co.za)
+- [Instagram](https://www.instagram.com/ourbackyard_coza/)
+- [Facebook Business Suite](https://business.facebook.com/latest/home?asset_id=112300310354161&business_id=1396838890485930&nav_ref=page_admin_nav_tab)
 
 ## Development Resources
 
