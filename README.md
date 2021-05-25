@@ -8,6 +8,7 @@ Connecting people with local businesses
 ## Social Media
 
 - [Twitter](https://twitter.com/Ourbackyard1)
+- [LinkedIn](https://www.linkedin.com/company/72398667/admin/)
 - [Facebook](https://www.facebook.com/ourbackyard.co.za)
 - [Instagram](https://www.instagram.com/ourbackyard_coza/)
 - [Facebook Business Suite](https://business.facebook.com/latest/home?asset_id=112300310354161&business_id=1396838890485930&nav_ref=page_admin_nav_tab)
