@@ -284,6 +284,13 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
 
+axios@^0.21.4:
+  version "0.21.4"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
+  integrity sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==
+  dependencies:
+    follow-redirects "^1.14.0"
+
 babel-walk@3.0.0-canary-5:
   version "3.0.0-canary-5"
   resolved "https://registry.yarnpkg.com/babel-walk/-/babel-walk-3.0.0-canary-5.tgz#f66ecd7298357aee44955f235a6ef54219104b11"
@@ -1217,6 +1224,11 @@ flatted@^3.1.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.1.1.tgz#c4b489e80096d9df1dfc97c79871aea7c617c469"
   integrity sha512-zAoAQiudy+r5SvnSw3KJy5os/oRJYHzrzja/tBDqrZtNhUw8bt6y8OBzMWcjWr+8liV8Eb6yOhw8WZ7VFZ5ZzA==
+
+follow-redirects@^1.14.0:
+  version "1.14.4"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.4.tgz#838fdf48a8bbdd79e52ee51fb1c94e3ed98b9379"
+  integrity sha512-zwGkiSXC1MUJG/qmeIFH2HBJx9u0V46QGUe3YR1fXG8bXQxq7fLj0RjLZQ5nubr9qNJUZrH+xUcwXEoXNpfS+g==
 
 forever-agent@~0.6.1:
   version "0.6.1"
@@ -2322,14 +2334,14 @@ parseurl@~1.3.3:
   resolved "https://registry.yarnpkg.com/parseurl/-/parseurl-1.3.3.tgz#9da19e7bee8d12dff0513ed5b76957793bc2e8d4"
   integrity sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ==
 
-passport-auth0@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/passport-auth0/-/passport-auth0-1.4.0.tgz#a87b96e6d6650f79e25d95a8762fdb548cb500be"
-  integrity sha512-U5Oe09VUtynA00tvEz5F9zFIAhucpu0OTHwkRnIlFOCZTzQabp3YHinnZlX1pMM0RzceROkO073JAAF86znLQg==
+passport-auth0@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/passport-auth0/-/passport-auth0-1.4.1.tgz#a92000b9aafb7438430a9f0acefa6e6a34c1132f"
+  integrity sha512-CRGGZuwghLCjvnfawMs6FvPrSO9wu3wrbi2eDtxLHoM7lHpUy+dmBKOwzSgV18wDKV6fgq5EK8ykupkRs4s7VQ==
   dependencies:
+    axios "^0.21.4"
     passport-oauth "^1.0.0"
-    passport-oauth2 "^1.5.0"
-    request "^2.88.0"
+    passport-oauth2 "^1.6.0"
 
 passport-oauth1@1.x.x:
   version "1.1.0"
@@ -2340,7 +2352,7 @@ passport-oauth1@1.x.x:
     passport-strategy "1.x.x"
     utils-merge "1.x.x"
 
-passport-oauth2@1.x.x, passport-oauth2@^1.5.0:
+passport-oauth2@1.x.x, passport-oauth2@^1.6.0:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/passport-oauth2/-/passport-oauth2-1.6.1.tgz#c5aee8f849ce8bd436c7f81d904a3cd1666f181b"
   integrity sha512-ZbV43Hq9d/SBSYQ22GOiglFsjsD1YY/qdiptA+8ej+9C1dL1TVB+mBE5kDH/D4AJo50+2i8f4bx0vg4/yDDZCQ==
@@ -2691,7 +2703,7 @@ request-ip@~2.0.1:
   dependencies:
     is_js "^0.9.0"
 
-request@^2.51.0, request@^2.88.0:
+request@^2.51.0:
   version "2.88.2"
   resolved "https://registry.yarnpkg.com/request/-/request-2.88.2.tgz#d73c918731cb5a87da047e207234146f664d12b3"
   integrity sha512-MsvtOrfG9ZcrOwAW+Qi+F6HbD0CWXEh9ou77uOb7FM2WPhwT7smM833PzanhJLsgXjN89Ir6V2PczXNnMpwKhw==
