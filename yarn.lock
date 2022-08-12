@@ -2137,10 +2137,10 @@ nice-try@^1.0.4:
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
   integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
 
-nodemailer@6.7.0:
-  version "6.7.0"
-  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.7.0.tgz#86614722c4e0c33d1b5b02aecb90d6d629932b0d"
-  integrity sha512-AtiTVUFHLiiDnMQ43zi0YgkzHOEWUkhDgPlBXrsDzJiJvB29Alo4OKxHQ0ugF3gRqRQIneCLtZU3yiUo7pItZw==
+nodemailer@6.7.8:
+  version "6.7.8"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.7.8.tgz#9f1af9911314960c0b889079e1754e8d9e3f740a"
+  integrity sha512-2zaTFGqZixVmTxpJRCFC+Vk5eGRd/fYtvIR+dl5u9QXLTQWGIf48x/JXvo58g9sa0bU6To04XUv554Paykum3g==
 
 nodemon@2.0.14:
   version "2.0.14"
