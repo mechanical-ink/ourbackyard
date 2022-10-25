@@ -2333,10 +2333,10 @@ sitemap@^7.1.1:
     arg "^5.0.0"
     sax "^1.2.4"
 
-slack-notify@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/slack-notify/-/slack-notify-2.0.3.tgz#ad50324aa2dbb3deee58599053c70f9b72acee4d"
-  integrity sha512-kRbXhgVnUoI93nIMaXprZyBixH3FfsMkybxppPU0r9yQm4RIoAw2E1QG3l15KRAce7S0mGPYYTIZ7rf6IbBAIQ==
+slack-notify@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/slack-notify/-/slack-notify-2.0.4.tgz#21ce903867315e3902bd1c4f91b00b8b6c503615"
+  integrity sha512-eTJmRW7nuZUmcKobWVP4r2AiUrl6W3jWOLaPx/HczUfO/eJN2EyCNZAv8OIBQi70VOlIG6CX27xcdV1O2qc3/w==
 
 slice-ansi@^4.0.0:
   version "4.0.0"
