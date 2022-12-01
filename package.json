@@ -50,7 +50,7 @@
     "passport": "^0.6.0",
     "passport-auth0": "^1.4.3",
     "pug": "3.0.2",
-    "rollbar": "^2.25.2",
+    "rollbar": "^2.26.0",
     "sitemap": "^7.1.1",
     "slack-notify": "^2.0.3"
   }
