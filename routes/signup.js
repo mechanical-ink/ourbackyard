@@ -7,10 +7,6 @@ const slack = require("slack-notify")(process.env.SLACK_WEBHOOK);
 
 const UserAPI = require("../models/user-api");
 
-router.get("/signup/select-account-type", async (req, res) => {
-  res.render("signup/index");
-});
-
 router.post("/signup/select-account-type", async (req, res, next) => {
   const user = req.session.user;
   const dbUser = await UserAPI.addUser(user, req.body.role);

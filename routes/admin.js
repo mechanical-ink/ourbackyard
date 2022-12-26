@@ -5,10 +5,6 @@ const router = express.Router();
 const dbUtils = require("../utils/db");
 const User = require("../models/user");
 
-router.get("/admin/add-user", secured(), (req, res) => {
-  res.render("admin/users/add-user");
-});
-
 router.post("/admin/add-user", secured(), (req, res) => {
   const reqBody = req.body;
   dbUtils
@@ -23,7 +19,7 @@ router.post("/admin/add-user", secured(), (req, res) => {
         console.error(`Error creating user: ${error.toString()}`);
       }
     })
-    .catch(error => {
+    .catch((error) => {
       console.error(
         `Error while commuincating with database: ${error.toString()}`
       );
@@ -43,7 +39,7 @@ router.get("/admin/view-users", secured(), (req, res) => {
         console.error(`Error creating user: ${error.toString()}`);
       }
     })
-    .catch(error => {
+    .catch((error) => {
       console.error(
         `Error while commuincating with database: ${error.toString()}`
       );
@@ -63,7 +59,7 @@ router.post("/admin/edit-user", secured(), (req, res) => {
         console.error(`Error creating user: ${error.toString()}`);
       }
     })
-    .catch(error => {
+    .catch((error) => {
       console.error(
         `Error while commuincating with database: ${error.toString()}`
       );
@@ -77,7 +73,7 @@ router.post("/admin/update-user", secured(), (req, res) => {
       try {
         const user = await User.findOneAndUpdate(req.body.email, req.body, {
           new: true,
-          useFindAndModify: false
+          useFindAndModify: false,
         }).exec();
         if (user) {
           res.render("admin/users/edit-user", { user });
@@ -86,7 +82,7 @@ router.post("/admin/update-user", secured(), (req, res) => {
         console.error(`Error creating user: ${error.toString()}`);
       }
     })
-    .catch(error => {
+    .catch((error) => {
       console.error(
         `Error while commuincating with database: ${error.toString()}`
       );
@@ -99,7 +95,7 @@ router.post("/admin/delete-user", secured(), (req, res) => {
     .then(async () => {
       try {
         const user = await User.findOneAndDelete(req.body, {
-          useFindAndModify: false
+          useFindAndModify: false,
         }).exec();
         if (user) {
           res.redirect("view-users");
@@ -108,7 +104,7 @@ router.post("/admin/delete-user", secured(), (req, res) => {
         console.error(`Error creating user: ${error.toString()}`);
       }
     })
-    .catch(error => {
+    .catch((error) => {
       console.error(
         `Error while commuincating with database: ${error.toString()}`
       );

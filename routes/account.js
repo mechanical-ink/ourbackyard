@@ -5,20 +5,6 @@ const router = express.Router();
 const dbUtils = require("../utils/db");
 const UserAPI = require("../models/user-api");
 
-/* GET user profile */
-router.get("/account/", secured(), (req, res, next) => {
-  res.render("account/user", {
-    title: "Profile page",
-  });
-});
-
-/* GET user profile edit */
-router.get("/account/edit", secured(), (req, res, next) => {
-  res.render("account/edit", {
-    title: "Edit Profile",
-  });
-});
-
 router.post("/account/update", secured(), (req, res, next) => {
   dbUtils
     .connect("ourbackyard")
