@@ -1,24 +1,17 @@
 {
   "name": "ourbackyard",
   "version": "0.0.1",
-  "description": "Connecting people with local businesses",
+  "description": "Connecting communities with local businesses",
   "main": "app.js",
   "scripts": {
-    "build": "parcel views/index.pug",
-    "build:sass": "sass ./static/sass/:./static/style/",
-    "build:sass:dev": "sass ./static/sass/:./static/style/ --watch",
-    "server": "nodemon app.js",
-    "start": "run-p build:sass:dev server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "nodemon app.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/schalkneethling/ourbackyard.git"
   },
   "keywords": [
-    "sass",
-    "html",
-    "js",
+    "javascript",
     "nodejs"
   ],
   "author": "Schalk Neethling",
