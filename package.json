@@ -52,6 +52,6 @@
     "pug": "3.0.2",
     "rollbar": "^2.26.0",
     "sitemap": "^7.1.1",
-    "slack-notify": "^2.0.3"
+    "slack-notify": "^2.0.6"
   }
 }
